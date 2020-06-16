@@ -41,12 +41,17 @@
                               <?php
 
                                 while($rows = mysqli_fetch_assoc($result)){
+                                  if($rows['book_img'] == ""){
+                                    $src = "img/noi.png";
+                                }else{
+                                    $src = "img/book-image/{$rows['book_img']}";
+                                }
                               ?>
                               <tr>
                                 <td><?php echo substr($rows['book_name'],0,20) . "..." ?></td>
                                 <td><?php echo $rows['book_price'] ?></td>
                                 <td><?php echo substr($rows['book_discription'],0,150) . "..." ?></td>
-                                <td><img src="../img/book-image/<?php echo $rows['book_img'] ?>" style="max-width:100px; max-height:45px;" alt=""></td>
+                                <td><img src="../<?php echo $src ?>" style="max-width:100px; max-height:45px;" alt=""></td>
                                 <td><a id="edit" href="edit-book.php?eid=<?php echo $rows['book_id'] ?>" class="rounded"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                 <td><a id="delete" href="delete-book.php?did=<?php echo $rows['book_id']; ?>" class="rounded"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                               </tr>

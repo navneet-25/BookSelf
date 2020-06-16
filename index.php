@@ -13,7 +13,7 @@ if(isset($_SESSION['user'])){
                 <div id="book-list">
                     <ul class="nav justify-content-center" id="nav">
                         <li class="nav-item">
-                            <p style="cursor: pointer;" class="nav-link selecteda" id="all">All</p>
+                            <p style="cursor: pointer;" class="nav-link selecteda" id="all"><img src='img/ok.png' style='width:auto; height:26px; margin-right:5px;'>All</p>
                         </li>
                         
                     </ul>
@@ -154,7 +154,7 @@ $(document).ready(function(){
                 }else{
                     alert(data);
                 }
-            }
+            } 
         });
     });
     $('#all').on('click', function(){
@@ -163,6 +163,17 @@ $(document).ready(function(){
     $(document).on("click", "#nav-link", function(){
         var x = $(this).data("nid");
         loadproduct(x);
+    });
+    $("#search").on("keyup",function(){
+    var search_term = $(this).val();
+        $.ajax({
+            url: "search-products.php",
+            type: "POST",
+            data : {search:search_term },
+            success: function(data) {
+            $("#cards").html(data);
+            }
+        });
     });
 });
 </script>

@@ -2,7 +2,7 @@
 include "../include/config.php";
 session_start();
 if(isset($_SESSION["username"])){
-    header("Location: http://localhost/BookSelf/admin/main.php");
+    header("Location: main.php");
 }
 ?>
 <!DOCTYPE html>

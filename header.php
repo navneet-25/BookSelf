@@ -15,6 +15,13 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="CSS/header.css">
+    <style>
+    #search:focus{
+        outline:0px !important;
+        -webkit-appearance:none;
+        box-shadow: none !important;
+    }
+    </style>
     <title>Book Self</title>
     
 </head>
@@ -27,14 +34,14 @@
                 <!-- </div> -->
             </div>
             <div class="col-md-6">
-                <form class="my-3">
+            <form class="my-3">
                     <div class="input-group search" style="margin-top: 1.8rem;">
-                      <input type="text" class="form-control" style="border-radius: 20px 0px 0px 20px;" placeholder="Search">
-                        <button class="btn btn-default border" style="border-radius: 0px 10px 10px 0px;" type="submit">
-                            <i class="fa fa-search" aria-hidden="true"></i>
+                      <input id="search" style="outline:none;border-radius: 20px 0px 0px 20px;border-right:none;outline:none;" type="text" class="form-control search" placeholder="Search">
+                        <button type="button" class="btn" style="padding:0px 10px;cursor:pointer;border-radius: 0px 20px 20px 0px;background-color:white;border-left:none;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;" type="submit">
+                            <i class="fa fa-search" style="color:#ff4a3d" aria-hidden="true"></i>
                         </button>
                     </div>
-                  </form>
+                  </form> 
             </div>
             <!-- <div class="col-md-3 mt-2">
                 &nbsp;&nbsp;<i class="fa fa-user-circle" style="font-size:50px" aria-hidden="true"></i>&nbsp;&nbsp;

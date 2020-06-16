@@ -21,20 +21,25 @@
             }else{
                 $src = "img/book-image/{$rows['book_img']}";
             }
-            $output .= "<tr>
-                            <td>
-                                <figure class='media my-2'>
-                                    <div class='img-wrap'><img style='width:53px;height:75px;margin-right: 1rem;' src='{$src}' class='img-thumbnail img-sm'></div>
-                                    <figcaption class='media-body'>
-                                        <h5 class='title'>{$rows["book_name"]}</h5>
-                                        <dl class='param param-inline small' style='margin-bottom: 7px;margin-top: 12px;line-height: 1.4;'>
-                                        <dt style='display: inline-block;margin: 0;margin-right: 7px;font-weight: 600;'>Quantity : </dt>
-                                        <dd style='display: inline-block;vertical-align: baseline;'>{$rows["book_quant"]}</dd>
-                                    </figcaption>
-                                </figure> 
-                            </td>
-                            <td>";
-                $output .=   "<select id='quant' class='form-control my-2' data-uid={$rows["id"]}>";
+            $output .= "<div>
+            <h5 style='color: green;font-family: Arial, sans-serif;font-weight: 700;font-size: 18px;margin: 0;'>Estimated Delivery Date: 5 JUN 2020</h5>
+            <p class='small text-secondary'>This is estimated delivery date, so date may differ</p>
+                <div class='row'>
+                    <div class='col-sm-2'>
+                        <img src='{$src}' class='d-block mx-auto mt-1' style='max-width: 100%;max-height:79px;' alt=''>
+                    </div>
+                    <div class='col-sm-10'>
+                        <h6 style='font-size: 15px;font-family: Arial, Helvetica, sans-serif;margin-bottom: 3px;'>{$rows['book_name']}</h6>
+                        <p class='d-inline' style='text-decoration: line-through;color: rgb(131, 131, 131);font-size: 12px;'><i>₹.100.00</i></p>
+                        <p class='d-inline ml-1' style='font-weight: 600; color: rgb(255, 77, 77);font-size: 14px;'> ₹.{$rows['book_price']}</p>
+                        <img src='img/verif.JPG' style='width: auto;height: 15px;margin-bottom: 5px;' alt=''>
+                        <p class='small' style='margin-bottom: 5px;'>You Save: ₹.00.00 (0%)</p>
+                        <p class='d-inline' style='font-weight: 600;'>Quantity: {$rows['book_quant']}</p><p class='d-inline' style='color: rgb(38, 38, 255);margin-left: 5px;cursor: pointer; font-size: 12px;'>Change</p>
+                    </div>
+                </div>
+                <hr>
+                </div>";
+                /* $output .=   "<select id='quant' class='form-control my-2' data-uid={$rows["id"]}>";
 
                                 if($rows['book_quant'] == 1){
                                     $output .="<option selected value='1'>1</option>
@@ -81,7 +86,7 @@
                                     <a title='' href='' class='my-2 btn btn-outline-success' data-toggle='tooltip' data-original-title='Save to Wishlist'> <i class='fa fa-heart'></i></a> 
                                     <a id='remove' data-did={$rows['id']} class='my-2 btn btn-outline-danger'> × Remove</a>
                             </td>
-                        </tr>";
+                        </tr>"; */
                         $count++;
         }
         

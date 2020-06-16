@@ -181,3 +181,7 @@
   -webkit-animation: none;
   background-image: none;
 }
+#atc{
+  width: 100%;
+  border:1px solid crimson;
+}

@@ -42,6 +42,15 @@
                 line-height: 15px;
                 font-weight: 500;
             }
+            #search{
+                border-radius: 20px 0px 0px 20px;
+                border-right:none;
+            }
+            #search:focus{
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
     </style>
     <title>Book Self</title>
 </head>
@@ -56,8 +65,8 @@
             <div class="col-md-5">
                 <form class="my-3">
                     <div class="input-group search" style="margin-top: 1.8rem;">
-                      <input type="text" class="form-control search" style="border-radius: 20px 0px 0px 20px;border-right:none;" placeholder="Search">
-                        <button class="btn" style="padding:0px 10px;cursor:pointer;border-radius: 0px 20px 20px 0px;background-color:white;border-left:none;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;" type="submit">
+                      <input id="search" style="outline:none;" type="text" class="form-control search" placeholder="Search">
+                        <button type="button" class="btn" style="padding:0px 10px;cursor:pointer;border-radius: 0px 20px 20px 0px;background-color:white;border-left:none;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;" type="submit">
                             <i class="fa fa-search" style="color:#ff4a3d" aria-hidden="true"></i>
                         </button>
                     </div>
@@ -79,7 +88,7 @@
                 <div id="usernav" style="width:fit-content;margin:30px auto 15px">
                     <div id="name" style="display: inline;">
                     <div class="dropdown" style="border-bottom:none;">
-                    <p class="dropbtn">Hello, <?php echo explode(" ", $var['user'])[0];?> <i class="fa fa-caret-down" style="font-size:15px" aria-hidden="true"></i></p>
+                    <p class="dropbtn">Hello, <?php echo explode(" ", $var['user_n'])[0];?> <i class="fa fa-caret-down" style="font-size:15px" aria-hidden="true"></i></p>
                     <div class="dropdown-content">
                                 <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
                                 <a href="#"><i class="fa fa-heart" style="color:#ff4a3d" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Wishlist</a>
@@ -91,10 +100,10 @@
                     
                     
                     <div id="navorder" style="display: inline;">
-                    <a href="#" style="margin:0 2px 0 10px;padding:5px 1rem;"><p style="display:inline;font-weight:400;font-size:18px">Orders</p></a> 
+                    <a href="orders.php" style="margin:0 2px 0 10px;padding:5px 1rem;"><p style="display:inline;font-weight:400;font-size:18px">Orders</p></a> 
                     </div>
                     <div id="navcart" style="display: inline;">
-                    <a href="user-cart.php" style="padding:;font-size:18px;text-decoration:none;color:black">
+                    <a href="user-cart.php" style="font-size:18px;text-decoration:none;color:black">
                     <i id="cartload" class="fa" style="font-size:24px">&#xf07a;</i>
                     <span class='badge badge-warning' id='lblCartCount'></span>
                         <p style="display:inline;font-weight:400;">Cart</p></a>

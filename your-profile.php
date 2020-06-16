@@ -13,7 +13,7 @@
                             $reslut = mysqli_fetch_assoc($run);
                             ?>
                             <img id="user-img" src="img/user-boy.png" class="border rounded-circle mx-auto d-block" alt="">
-                            <h4 class="card-title text-center my-3"><?php echo $reslut['user'] ?></h4>
+                            <h4 class="card-title text-center my-3"><?php echo $reslut['user_n'] ?></h4>
                             <hr style="width:80%;margin:auto;">
                             <p style="margin:5px;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $reslut['user_email'] ?></p>
                             <p style="margin:5px;"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Total Oders : 5</p>
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="card border rounded mx-auto" style="box-shadow: 0px 0px 10px 0px #f5f5f5;width:20rem;">
-                <a href="" style="text-decoration:none;color:black">
+                <a href="orders.php" style="text-decoration:none;color:black">
                     <div class="card-body">
                         <div class="row">
                             <div class="d-inline col-sm-3">

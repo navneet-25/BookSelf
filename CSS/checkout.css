@@ -1,6 +1,40 @@
 #logo h3{
     font-family: serif;
 }
-#logo span{
-    font-size: 15px;
+body {
+    font-family: Arial, sans-serif;
 }
+.span{
+    font-size: 18px;
+    color: black;
+}
+.sya{
+    font-family: Arial,sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+.sya1{
+    font-size: 12px;
+}
+#clickme{
+    color: blue;
+    cursor: pointer;
+}
+#clickme:hover{
+    color: rgb(255, 95, 95);
+}
+.card-link{
+    border: 1px solid rgb(105, 105, 105);
+    border-radius: 5px;
+    font-size: 10px;
+    padding: 6px 20px;
+    margin-top: 3rem;
+}
+.btn-light{
+    width: 93%;
+    border: none;
+    margin-bottom: 17px;
+}
+
+
