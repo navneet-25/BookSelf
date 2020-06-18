@@ -71,11 +71,26 @@ $(document).ready(function(){
     loadTable();
     // for hover to show the address 
     $(document).on("mouseenter", ".showadd", function(){
-        $(".showadder").fadeIn(300);
+        $(this).parent().next().fadeIn(300);
     });
     $(document).on("mouseleave", ".showadd", function(){
         $(".showadder").fadeOut(300);
     });
+    $(document).on("click", "#cancel", function(){
+        let x = $(this).data("id");
+        $.ajax({
+            url : "can-order-up.php",
+            type : "POST",
+            data : {id : x},
+            success : function(data){
+                if(data == 1){
+                    loadTable();
+                }else{
+                    alert(data);
+                }
+            }
+        })
+    })
 });
     </script>
 <?php include "footer.php"; ?>
