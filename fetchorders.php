@@ -66,6 +66,7 @@
                                     $output .= "<div style='background-color: red; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Returning &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is returning to BookSelf</span></p><br>";
                                    }
                                    /* ok everything */
+                                   /* okokokokok */
                         
                 $output .=      "<!-- <div style='background-color: rgb(247, 230, 0); width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(124, 124, 124);'> Order Shipping &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp; Your order is shipped by BookSelf</p><br>
                                         <div style='background-color: rgb(255, 37, 37); width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(124, 124, 124);'> Deliverd Order &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp; Your Book Successfully Deliverd</p><br> -->
