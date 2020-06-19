@@ -121,6 +121,16 @@
       });
     }
     loadAdd();
+    $(document).on("click", "#submit", function(){
+        let x = $(this).data("aid");
+        $.ajax({
+            url : "addsess.php",
+            type : "POST",
+            data : {addid : x},
+            success : function(data){
+            }
+        })
+    })
     $("#clickme").click(function() {
     $('html,body').animate({
         scrollTop: $(".table").offset().top},

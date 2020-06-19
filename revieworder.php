@@ -2,6 +2,8 @@
 session_start();
 if(!isset($_SESSION['user'])){
     header("location: user-login.php");
+}elseif(!isset($_SESSION['add'])){
+    header("location: user-login.php");
 } ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,7 +111,7 @@ if(!isset($_SESSION['user'])){
                         <div id="shiping"><h6 class="d-inline">Shipping Address</h6><p class="d-inline" style="cursor: pointer;color: rgb(38, 38, 255);margin-left: 7px;font-size: 12px;">Change</p></div>
                             <div class="card-body" style="padding: 5px 0;">
                             <?php 
-                            $addid = $_GET['aid'];
+                            $addid = $_SESSION['add'];
                             $query = "SELECT * FROM addresses WHERE add_id = {$addid}";
                             $run = mysqli_query($conn, $query) or die("QUERY FT GYI");
                             $result = mysqli_fetch_assoc($run);

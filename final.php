@@ -2,7 +2,7 @@
 include "include/config.php";
 session_start();
 $uid = $_SESSION['id'];
-$address = $_POST['add_id'];
+$address = $_SESSION['add'];
 date_default_timezone_set("Indian/Kerguelen");
 $quer1 = "SELECT * FROM orders WHERE user_id = {$uid}";
 $run1 = mysqli_query($conn, $quer1) or die("ok die");
@@ -29,6 +29,7 @@ if(mysqli_num_rows($run1) > 0){
      }
     $quer3 = "DELETE FROM orders WHERE user_id = {$uid}";
 $run3 = mysqli_query($conn, $quer3);
+unset($_SESSION['add']);
 echo "index.php"; 
 }else{
     echo "PROBELM";

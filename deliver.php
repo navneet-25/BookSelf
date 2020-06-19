@@ -17,10 +17,10 @@ if(mysqli_num_rows($reslut) > 0){
                                 <h5 class='card-title'>{$rows['user_name']}</h5>
                                 <h6 class='card-subtitle mb-2 text-muted'>{$rows['user_phone']}</h6>
                                 <p class='card-text' style='height:85px'>{$rows['address_name']}</p>
-                                <a id='submit' href='revieworder.php?aid={$rows['add_id']}' data-aid={$rows['add_id']} class='btn btn-light'>Deliver to this</a><br>
+                                <a id='submit' href='revieworder.php' data-aid={$rows['add_id']} class='btn btn-light'>Deliver to this</a><br>
                                 <a href='#' data-eid={$rows['add_id']} id='edit' class='card-link' style='color:green'>EDIT</a>
                                 <a href='#' data-did={$rows['add_id']} id='delete' class='card-link' style='margin-left: 3rem;color:red'>DELETE</a>
-                            </div>
+                            </div> 
                     </div>";
     }
     echo $output;
