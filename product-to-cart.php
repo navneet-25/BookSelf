@@ -89,7 +89,8 @@
 
         echo $output;
     }else{
-        echo "<br><h2 class='text-right'>No Record Found</h2><br>";
+        echo "<div style='margin:auto;position: relative;left: 28%;'><h5 class='' style='padding:10px;border-radius:5px;font-weight:400;font-size:15px;display:block;margin:4rem 0 0;'><img src='img/cartempty.png' alt='your cart is empty' style='width:auto;height:200px;'> You haven't added any book to cart please <a href='index.php'>Shop Here.</a></h5></div><br>";
+        /* echo "<div style='margin:auto;position: relative;left: 50%;'><h5 class='' style='padding:10px;border-radius:5px;font-weight:400;font-size:15px;display:block;margin:4rem 0 0;'><img src='img/cartempty.png' alt='your cart is empty' style='width:auto;height:300px;'></h5></div><br>"; */
     }
 
 ?>

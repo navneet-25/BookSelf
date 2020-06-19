@@ -11,6 +11,4 @@ if($run){
 }else{
     mysqli_error();
 }
-
-
 ?>
