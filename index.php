@@ -9,7 +9,7 @@ if(isset($_SESSION['user'])){
 <link rel="stylesheet" href="css/animation.css"/>
 <div class="container" style="min-height:600px">
         <div class="row mx-auto">
-            <div class="col-xl-12">
+            <div class="col-xl-12 p-0">
                 <div id="book-list" class="navbar-collapse">
                     <ul class="nav justify-content-center navbar" id="nav">
                         <li class="nav-item">
@@ -172,7 +172,7 @@ $(document).ready(function(){
         loadproduct(x);
     });
     $("#search").on("keyup",function(){
-    var search_term = $(this).val();
+    let search_term = $(this).val();
         $.ajax({
             url: "search-products.php",
             type: "POST",

@@ -62,7 +62,7 @@
             </div>
             <div class="col-md-5">
                 <form class="my-3">
-                    <div class="input-group search" style="margin-top: 1.8rem;">
+                    <div class="input-group search" style="margin-top: 1.5rem;">
                       <input id="search" style="outline:none;" type="text" class="form-control search" placeholder="Search">
                         <button type="button" class="btn" style="padding:0px 10px;cursor:pointer;border-radius: 0px 20px 20px 0px;background-color:white;border-left:none;border-right: 1px solid lightgrey;border-bottom: 1px solid lightgray;border-top: 1px solid lightgray;" type="submit">
                             <i class="fa fa-search" style="color:#ff4a3d" aria-hidden="true"></i>
@@ -83,28 +83,26 @@
             $var = mysqli_fetch_assoc($result);
             ?>
             <div class="col-md-4">
-                <div id="usernav" style="width:fit-content;margin:30px auto 15px">
-                    <div id="name" style="display: inline;">
-                    <div class="dropdown" style="border-bottom:none;">
-                    <p class="dropbtn">Hello, <?php echo explode(" ", $var['user_n'])[0];?> <i class="fa fa-caret-down" style="font-size:15px" aria-hidden="true"></i></p>
-                    <div class="dropdown-content">
-                                <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
-                                <a href="#"><i class="fa fa-heart" style="color:#ff4a3d" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Wishlist</a>
-                                <a href="#"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Notification</a>
-                                <a href="logout.php"><i class="fa fa-power-off" style="color:red" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+                <div id="usernav" class="row" style="width:fit-content;margin: 2px auto 10px">
+                    <div class="dropdown col" style="cursor:pointer;margin-top:20px;padding:0;width:20px">
+                        <p class="dropbtn" style="font-size: 13px;margin-bottom: 0;font-family: cursive;padding: 0;">Hello,<h6 style="margin-bottom:0"><?php echo explode(" ", $var['user_n'])[0];?> <i class="fa fa-caret-down"  style="font-size:15px;" aria-hidden="true"></i></h6></p>
+                            <div class="dropdown-content" style="left:-60%">
+                                        <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
+                                        <a href="#"><i class="fa fa-heart" style="color:#ff4a3d" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Wishlist</a>
+                                        <a href="#"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Notification</a>
+                                        <a href="logout.php"><i class="fa fa-power-off" style="color:red" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
                             </div>
                     </div>
-                    </div>
                     
                     
-                    <div id="navorder" style="display: inline;">
-                    <a href="orders.php" style="margin:0 2px 0 10px;padding:5px 1rem;"><p style="display:inline;font-weight:400;font-size:18px">Orders</p></a> 
+                    <div id="navorder" class="col p-0 ml-5 mr-4" style="margin-top:20px;width:40px">
+                        <p style="font-size: 13px;margin-bottom: 0;font-family: cursive;padding: 0;"><a href="orders.php">Your<h6 style="margin-bottom:0">Orders</h6></a></p> 
                     </div>
-                    <div id="navcart" style="display: inline;">
+                    <div id="navcart" class="col p-0" style="margin-top:26px;width:140px">
                     <a href="user-cart.php" style="font-size:18px;text-decoration:none;color:black">
                     <i id="cartload" class="fa" style="font-size:24px">&#xf07a;</i>
                     <span class='badge badge-warning' id='lblCartCount'></span>
-                        <p style="display:inline;font-weight:400;">Cart</p></a>
+                        <p style="display:inline;font-weight: 600;font-size: 14px;">Cart</p></a>
 
                     </div>
                 </div>

@@ -37,16 +37,16 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
-         <a href="#">Book<snap onMouseOut="this.style.color='#737373'" onMouseOver="this.style.color='#ff3054'">Self<span></a>.
+         <a href="index.php">Book<snap onMouseOut="this.style.color='#737373'" onMouseOver="this.style.color='#ff3054'">Self<span></a>.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="dribbble" href="#"><i class="fa fa-instagram"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-youtube"></i></a></li>   
+              <li><a class="facebook" target="_blank" href="https://www.facebook.com/navneetpal25/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" target="_blank" href="https://www.instagram.com/navneetpal.25"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="linkedin" target="_blank" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a></li>   
             </ul>
           </div>
         </div>

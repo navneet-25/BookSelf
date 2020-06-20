@@ -1,5 +1,7 @@
 <?php include "include/config.php";
 
+session_start();
+
 $search_value = $_POST["search"];
 
 $sql = "SELECT * FROM books WHERE book_name LIKE '%{$search_value}%' OR book_name LIKE '{$search_value}%'";
@@ -19,9 +21,30 @@ if(mysqli_num_rows($result) > 0){
             $src = "img/book-image/{$rows['book_img']}";
         }
 
+        if(isset($_SESSION['id'])){
+            
+            $uid = $_SESSION['id'];
+            $query1 = "SELECT * FROM orders WHERE user_id = {$uid}";
+
+        $result1 = mysqli_query($conn, $query1) or die("Query Failed");
+
+        $array = array();
+
+                while($rows1 = mysqli_fetch_assoc($result1)){
+                
+                $array[] = $rows1['book_name'];
+
+                } 
+        }
+
  $output .=   "<div class='col-md-3 my-1'>
-                <div class='card shadow'>
-                    <img class='card-img-top demo-img' src='{$src}' alt='Card image cap'>
+                <div class='card shadow'>";
+                if(isset($_SESSION['id'])){
+                    if(in_array($rows['book_name'], $array)){
+                        $output .=   "<div style='width: 71px;background: rgb(80, 80, 80, 0.7);text-align: center;margin: 5px;position: absolute;color: white;height:31px;padding: 3px'>Added</div>";
+                    }
+                }
+$output .=       "<img class='card-img-top demo-img' src='{$src}' alt='Card image cap'>
                         <div class='card-body border-top demo-card'>
                             <h6 class='card-title text-center'>{$name}</h6>
                             <b><p class='card-text'>₹. {$rows['book_price']}</p></b>
