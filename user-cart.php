@@ -11,10 +11,10 @@ if(!isset($_SESSION['user'])){
 
 
 <!-- <div class="container"> -->
-<br>  <p class="text-center h3">Your Cart</p>
+<br>  <p class="text-center h3">Your Cart [2]</p>
 <hr>
 
-                        <div class="card">
+                        <div class="card" style="min-height:400px;">
                                 <table class="table table-hover shopping-cart-wrap">
                                     <thead class="text-muted">
                                     <tr>

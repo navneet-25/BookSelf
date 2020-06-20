@@ -57,10 +57,8 @@
 <body>
     <div class="container-fluid">
         <div class="row mx-0 border-bottom">
-            <div class="col-md-3">
-                <div class="my-2">
-                        <a href="index.php"><img src="img/logo.PNG" alt="Logo" class="logo my-0 mx-3"></a>
-                </div>
+            <div class="col-md-3" style="width:fit-content;margin:auto;">
+                <a href="index.php"><img src="img/logo.PNG" alt="Logo"></a>
             </div>
             <div class="col-md-5">
                 <form class="my-3">

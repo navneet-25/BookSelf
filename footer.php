@@ -4,30 +4,30 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non quas consequuntur similique excepturi porro natus recusandae ab commodi amet assumenda iusto optio quod adipisci delectus perferendis at, eos quidem, corporis cum maiores placeat! Et at debitis in quaerat officia, necessitatibus illo. Hic omnis itaque veritatis? Totam odio sit omnis laboriosam!</p>
+            <h6 style="font-size:14px">About</h6>
+            <p class="text-justify small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non quas consequuntur similique excepturi porro natus recusandae ab commodi amet assumenda iusto optio quod adipisci delectus perferendis at, eos quidem, corporis cum maiores placeat! Et at debitis in quaerat officia, necessitatibus illo. Hic omnis itaque veritatis? Totam odio sit omnis laboriosam!</p>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Categories</h6>
+            <h6 style="font-size:14px">Categories</h6>
             <ul class="footer-links">
-              <li><a href="">C</a></li>
-              <li><a href="">UI Design</a></li>
-              <li><a href="">PHP</a></li>
-              <li><a href="">Java</a></li>
-              <li><a href="">Android</a></li>
-              <li><a href="">Templates</a></li>
+              <li style="font-size:12px"><a href="">C</a></li>
+              <li style="font-size:12px"><a href="">UI Design</a></li>
+              <li style="font-size:12px"><a href="">PHP</a></li>
+              <li style="font-size:12px"><a href="">Java</a></li>
+              <li style="font-size:12px"><a href="">Android</a></li>
+              <li style="font-size:12px"><a href="">Templates</a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
+            <h6 style="font-size:14px">Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="">About Us</a></li>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="">Contribute</a></li>
-              <li><a href="">Privacy Policy</a></li>
-              <li><a href="">Sitemap</a></li>
+              <li style="font-size:12px"><a href="">About Us</a></li>
+              <li style="font-size:12px"><a href="">Contact Us</a></li>
+              <li style="font-size:12px"><a href="">Contribute</a></li>
+              <li style="font-size:12px"><a href="">Privacy Policy</a></li>
+              <li style="font-size:12px"><a href="">Sitemap</a></li>
             </ul>
           </div>
         </div>

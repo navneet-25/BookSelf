@@ -7,15 +7,14 @@ if(isset($_SESSION['user'])){
 } 
 ?>
 <link rel="stylesheet" href="css/animation.css"/>
-<div class="container" style="min-height:500px">
-        <div class="row mx-0" style="height:68px;">
-            <div class="col-md-12">
-                <div id="book-list">
-                    <ul class="nav justify-content-center" id="nav">
+<div class="container" style="min-height:600px">
+        <div class="row mx-auto">
+            <div class="col-xl-12">
+                <div id="book-list" class="navbar-collapse">
+                    <ul class="nav justify-content-center navbar" id="nav">
                         <li class="nav-item">
                             <p style="cursor: pointer;" class="nav-link selecteda" id="all"><img src='img/ok.png' style='width:auto; height:26px; margin-right:5px;'>All</p>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
@@ -87,6 +86,13 @@ if(isset($_SESSION['user'])){
                     </div>
         </div>
 </div>
+<!-- <div class="container">
+<div class="row mt-4">
+    <div class="col-sm-12 py-1 border">
+        <img class="d-block mx-auto img-responsive" style="height:140px;width:auto;" src="img/offers/offer3.jpg" alt="">
+    </div>
+</div>
+</div> -->
 <script src="JS/jquery.js"></script>
 <script>
         $(document).on("click", ".nav-link", function(){
@@ -151,6 +157,7 @@ $(document).ready(function(){
                     window.location.assign("user-login.php");
                 }else if(data == 1){
                     loadcart();
+                    loadTable();
                 }else{
                     alert(data);
                 }

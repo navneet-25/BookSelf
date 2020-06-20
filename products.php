@@ -1,6 +1,24 @@
 <?php 
         include "include/config.php";
 
+        session_start();
+
+        if(isset($_SESSION['id'])){
+            
+            $uid = $_SESSION['id'];
+            $query1 = "SELECT * FROM orders WHERE user_id = {$uid}";
+
+        $result1 = mysqli_query($conn, $query1) or die("Query Failed");
+
+        $array = array();
+
+                while($rows1 = mysqli_fetch_assoc($result1)){
+                
+                $array[] = $rows1['book_name'];
+
+                } 
+        }
+
         $query = "SELECT * FROM books";
 
         $result = mysqli_query($conn, $query) or die("Query Failed");
@@ -21,9 +39,14 @@
                     $src = "img/book-image/{$rows['book_img']}";
                 }
 
-         $output .=   "<div class='col-md-3 my-1'>
-                        <div class='card shadow'>
-                            <a href='singlebook.php?bid={$rows['book_id']}' target='_blank' style='margin: auto;'><img class='card-img-top demo-img' src='{$src}' alt='Card image cap'></a>
+         $output .=   "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-12 my-1'>
+                        <div class='card shadow'>";
+                        if(isset($_SESSION['id'])){
+                            if(in_array($rows['book_name'], $array)){
+                                $output .=   "<div style='width: 71px;background: rgb(80, 80, 80, 0.7);text-align: center;margin: 5px;position: absolute;color: white;height:31px;padding: 3px'>Added</div>";
+                            }
+                        }
+        $output .=    "<a href='singlebook.php?bid={$rows['book_id']}' target='_blank' style='margin: auto;'><img class='card-img-top demo-img' src='{$src}' alt='Card image cap'></a>
                                 <div class='card-body border-top demo-card'>
                                 <a href='singlebook.php?bid={$rows['book_id']}' target='_blank' style='text-decoration: none;color: black;'><h6 class='card-title text-center'>{$name}</h6></a>
                                     <b><p class='card-text'>₹. {$rows['book_price']}</p></b>
