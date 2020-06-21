@@ -38,7 +38,7 @@
 
                             $username = $_POST['username'];
 
-                            $password = $_POST['password'];
+                            $password = md5($_POST['password']);
 
                             $query = "SELECT * FROM users WHERE user_username = '{$username}' AND user_password = '{$password}'";
 
@@ -89,7 +89,7 @@
                     </form>
                 </div>
                 <div id="create">
-                   <p>Don't Have? <a href="">Create an account</a></p>
+                   <p>Don't Have? <a href="signup.php">Create an account</a></p>
                 </div>
                 <div id="tnc">
                     <ul>

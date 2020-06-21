@@ -19,6 +19,11 @@ if(isset($_SESSION['user'])){
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <img src="img/offers/offer1.jpg" class="img-fluid d-block mx-auto img-thumbnail" alt="">
+            </div>
+        </div>
         <div id="cards" class="row my-2">
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>

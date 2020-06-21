@@ -84,7 +84,7 @@
             ?>
             <div class="col-md-4">
                 <div id="usernav" class="row" style="width:fit-content;margin: 2px auto 10px">
-                    <div class="dropdown col" style="cursor:pointer;margin-top:20px;padding:0;width:20px">
+                    <div class="dropdown col" style="cursor:pointer;margin-top:20px;padding:0;width:45px">
                         <p class="dropbtn" style="font-size: 13px;margin-bottom: 0;font-family: cursive;padding: 0;">Hello,<h6 style="margin-bottom:0"><?php echo explode(" ", $var['user_n'])[0];?> <i class="fa fa-caret-down"  style="font-size:15px;" aria-hidden="true"></i></h6></p>
                             <div class="dropdown-content" style="left:-60%">
                                         <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Profile</a>

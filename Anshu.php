@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
 		if(mysqli_num_rows($run) > 0){
 			$username_error = "Username Alreddy Takken..!!";
 		}else{
-			$sqli = "INSERT INTO info(Username,Password,Phone,Email,Name) VALUES ('{$Uname}', '{$Upass}', '{$Umob}', '{$Uemail}', '{$name}')";
+			$sqli = "INSERT INTO users(user_name,user_password,user_phone,user_email,user_n) VALUES ('{$Uname}', '{$Upass}', '{$Umob}', '{$Uemail}', '{$name}')";
 			$result = mysqli_query($conn, $sqli) or die("Result Problem". mysqli_error());
 			header("Location: http://localhost/BookSelf/Anshu.php");
 		}
