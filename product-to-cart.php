@@ -75,7 +75,7 @@
                                 <div class='price-wrap my-2'> 
                                     <var class='price' style='color: #007bff;font-size: 18px;font-weight: bold;margin-right: 5px;display: block;'>₹ {$rows["total"]}</var> 
                                     <small class='text-muted'>(₹ {$rows["book_price"]} each)</small> 
-                                </div> <!-- price-wrap .// -->
+                                </div>
                             </td>
                             <td class='text-right'> 
                                     <a title='' href='' class='my-2 btn btn-outline-success' data-toggle='tooltip' data-original-title='Save to Wishlist'> <i class='fa fa-heart'></i></a> 

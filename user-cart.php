@@ -34,12 +34,14 @@ if(!isset($_SESSION['user'])){
                         <div id="totalcart">
                             
                         </div>
+                        
 
                     <!-- </div>  -->
 <!--container end.//-->
 </div>
         
 <script src="JS/jquery.js"></script>
+
 <script>
 $(document).ready(function(){
     // Load Table Records
@@ -99,7 +101,7 @@ $(document).ready(function(){
 
     $(document).on("click", "#remove", function(){
         var book_id = $(this).data("did");
-
+        
         $.ajax({
             url : "deletetocart.php",
             type : "POST",

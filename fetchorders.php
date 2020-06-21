@@ -71,7 +71,7 @@
                                             <div class='row' id='ocot'>
                                                 <div class='col-sm mt-3'>";
                                                 if($rows['status'] == 1){
-                                                    $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);'>Cancel Order</button>";
+                                                    $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border' data-toggle='modal' data-target='#modal' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);'>Cancel Order</button>";
                                                }elseif($rows['status'] == 4){
                                                     $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);' disabled>Cancel Order</button>";
                                                }
