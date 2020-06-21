@@ -11,9 +11,7 @@ if(isset($_POST['submit'])){
                     $array[] = $reslut['book_name'];
                     }
                     if(!in_array($book_name, $array)){
-                        if(!isset($_POST['book_img'])){
-                            $book_img = "";
-                        }else{
+                        if(file_exists($_FILES['book_img']['tmp_name'])){
                             $file_name = $_FILES['book_img']['name'];
                             $file_size = $_FILES['book_img']['size'];
                             $file_tmp = $_FILES['book_img']['tmp_name'];
@@ -34,6 +32,9 @@ if(isset($_POST['submit'])){
                                 move_uploaded_file($file_tmp, "../img/book-image/". $book_img);
                                 $error = "Added Successfully";
                             } 
+                            
+                        }else{
+                            $book_img = "";
                         }
                         
                         $book_discription = $_POST['book_discription'];
@@ -50,7 +51,7 @@ if(isset($_POST['submit'])){
                                 echo $error;
                             }
                     }else{
-                        echo "Book Alredy Exist";
+                        echo "alert('Book Alredy Exist')";
                     }
 }
 ?>

@@ -55,23 +55,23 @@ include "loginheader.php"; ?>
             </div>
         </div>
         <div class='modal fade' id='modal' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-                                <div class='modal-dialog modal-dialog-centered' role='document'>
-                                    <div class='modal-content'>
-                                    <div class='modal-header'>
-                                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                        <span aria-hidden='true'>&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class='modal-body'>
-                                       <h4 style="width:fit-content;margin:auto"><i class="fa fa-ban" aria-hidden="true" style="color:red;font-size:25px;margin: 0 12px 0 0;"></i>Confirm Your Cancelation!!</h4>
-                                    </div>
-                                    <div class='modal-footer'>
-                                        <!-- <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button> -->
-                                        <button type='button' id="confirm" class='btn btn-danger'>Cancel Order</button>
-                                    </div>
-                                    </div>
-                                </div>
-                        </div>
+                <div class='modal-dialog modal-dialog-centered' role='document'>
+                    <div class='modal-content'>
+                    <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                        </button>
+                    </div>
+                    <div class='modal-body'>
+                        <h4 style="width:fit-content;margin:auto"><i class="fa fa-ban" aria-hidden="true" style="color:red;font-size:25px;margin: 0 12px 0 0;"></i>Confirm Your Cancelation!!</h4>
+                    </div>
+                    <div class='modal-footer'>
+                        <!-- <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button> -->
+                        <button type='button' id="confirm" class='btn btn-danger'>Cancel Order</button>
+                    </div>
+                    </div>
+                </div>
+        </div>
     </div>
     <script src="JS/jquery.js"></script>
 <script>

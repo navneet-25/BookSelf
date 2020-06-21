@@ -39,7 +39,7 @@
                     $src = "img/book-image/{$rows['book_img']}";
                 }
 
-         $output .=   "<div class='col-xl-3 col-lg-4 col-md-6 col-sm-12 my-1'>
+         $output .=   "<div class='col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12 my-1'>
                         <div class='card shadow'>";
                         if(isset($_SESSION['id'])){
                             if(in_array($rows['book_name'], $array)){

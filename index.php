@@ -86,13 +86,22 @@ if(isset($_SESSION['user'])){
                     </div>
         </div>
 </div>
-<!-- <div class="container">
-<div class="row mt-4">
-    <div class="col-sm-12 py-1 border">
-        <img class="d-block mx-auto img-responsive" style="height:140px;width:auto;" src="img/offers/offer3.jpg" alt="">
+<div class="container">
+    <div class="row mt-4">
+        <!-- <div class="col-sm-12 py-1" style="background-size:cover;">
+            <img class="img-fluid" src="img/offers/offer3.jpg" alt="">
+        </div> -->
+        <div class="col-4">
+            <img src="img/offers/offer2.jpg" class="img-thumbnail d-block mx-auto mt-2" alt="">
+        </div>
+        <div class="col-4">
+            <img src="img/offers/books.jpg" style="height:170px" class="img-thumbnail d-block mx-auto mt-2" alt="">
+        </div>
+        <div class="col-4">
+            <img src="img/offers/books.jpg" style="height:170px" class="img-thumbnail d-block mx-auto mt-2" alt="">
+        </div>
     </div>
 </div>
-</div> -->
 <script src="JS/jquery.js"></script>
 <script>
         $(document).on("click", ".nav-link", function(){

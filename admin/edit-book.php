@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="col" style="margin:auto;">
-                        <img src="../img/book-image/<?php echo $rows['book_img'] ?>" alt="" style="max-width:140px; height:120px">
+                        <img src="../img/book-image/<?php echo $rows['book_img'] ?>" alt="" class="img-thumbnail" style="max-width:140px; height:120px">
                         </div>
                         </div>
                         <hr style="border-top: 1px solid #e8e8e8;">
