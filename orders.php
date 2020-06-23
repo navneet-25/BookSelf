@@ -95,8 +95,10 @@ $(document).ready(function(){
         $(".showadder").fadeOut(300);
     });
     $(document).on("click", "#cancel", function(){
-        let x = $(this).data("id");
+        let y = $(this).data("id");
+        sessionStorage.setItem('id', y);   
         $("#confirm").click(function(){
+        let x = sessionStorage.getItem('id');
         $.ajax({
             url : "can-order-up.php",
             type : "POST",

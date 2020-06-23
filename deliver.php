@@ -27,7 +27,7 @@ if(mysqli_num_rows($reslut) > 0){
 }else{
     echo "<div class='col-md-3 mt-4'>
                 <div class='card-body ml-3' style='box-shadow: 0px 0px 10px #c4c4c4;width: 100;height:234px;'>
-                    <h5 class='card-title' style='margin:80px 14px;'>No Address Found</h5>
+                    <h5 class='card-title clickme' style='margin:80px auto;width: fit-content;cursor:pointer;'>Add New</h5>
 
                 </div>
             </div>";

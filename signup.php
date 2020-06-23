@@ -15,6 +15,15 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -59,10 +68,10 @@
                 ?>
                         <div class="container">
                             <div class="row box">
-                                <div class="col-4 border-right p-5">
+                                <div class="col-md-4 border-right p-5">
                                     <h5 class="text-center">Have an Account?</h5>
                                     <img src="img/user-boy.png" class="img-thumbnail d-block mx-auto mt-5" style="width:auto;height:180px;border-radius:50%" alt="">
-                                    <p class="small text-secondary">If you alredy have an account then please <a href="user-login.php">Sign In</a></p>
+                                    <p class="small text-secondary text-center">If you alredy have an account then please <a href="user-login.php">Sign In</a></p>
                                     <hr>
                                     <h6 class="text-center">Or</h6>
                                     <hr>
@@ -75,7 +84,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-8 px-4 py-4">
+                                <div class="col-md-8 px-4 py-4">
                                 <div class="row">
                                     <div class="col-12">
                                         <h5 class="text-center">Create your account to <a href="index.php" style="color:black;text-decoration:none;">BookSelf</a> <img src="img/user.png" style="width:auto;height:50px" alt=""></h5>
@@ -85,11 +94,9 @@
                                 <form action="signup.php" method="post" class="mt-3">
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
-                                        <label for="validationServer01">First name</label>
-                                        <input type="text" onkeyup="saveValue(this)" name="name" class="form-control is-valid" id="validationServer01" placeholder="First name" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
+                                        <label for="validationServer01">Full Name</label>
+                                        <input type="text" onkeyup="saveValue(this)" name="name" class="form-control" id="validationServer01" placeholder="First name" required>
+                                        <div class="valid-feedback" style="display:none;"></div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                         <label for="validationServerUsername">Username</label>
@@ -97,43 +104,33 @@
                                             <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupPrepend3">@</span>
                                             </div>
-                                            <input type="text" name="username" onkeyup="saveValue(this)" class="form-control is-invalid" id="validationServerUsername" placeholder="Username*" aria-describedby="inputGroupPrepend3" required>
-                                            <div class="invalid-feedback">
-                                            Please choose a username.
-                                            </div>
+                                            <input type="text" name="username" onkeyup="saveValue(this)" class="form-control " id="validationServerUsername" placeholder="Username*" aria-describedby="inputGroupPrepend3" required>
+                                            <div class="invalid-feedback" style="display:none;"></div>
                                         </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="validationServer05">Email</label>
-                                            <input type="email" name="email" onkeyup="saveValue(this)" class="form-control is-invalid" id="validationServer05" placeholder="Email*" required>
-                                            <div class="invalid-feedback">
-                                                Please provide a valid zip.
-                                            </div>
+                                            <input type="email" name="email" onkeyup="saveValue(this)" class="form-control " id="validationServer05" placeholder="Email*" required>
+                                            <div class="invalid-feedback" style="display:none;"></div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationServer04">Phone</label>
-                                            <input type="number" name="phone" onkeyup="saveValue(this)" class="form-control is-invalid" id="validationServer04" placeholder="Phone*" required>
-                                            <div class="invalid-feedback">
-                                                Please provide a valid state.
-                                            </div>
+                                            <input type="number" name="phone" onkeyup="saveValue(this)" class="form-control" autocomplete="off" id="validationServer04" placeholder="Phone*" required>
+                                            <div class="invalid-feedback" style="display:none;"></div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
-                                        <label for="validationServer03">Password</label>
-                                        <input type="password" class="form-control is-invalid" onkeyup="saveValue(this)" id="validationServer07" placeholder="Password*" required>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid city.
-                                        </div>
+                                        <label for="validationServer07">Password</label>
+                                        <input type="password" class="form-control " onkeyup="saveValue(this)" id="validationServer07" placeholder="Password*" required>
+                                        <div class="invalid-feedback" style="display:none;"></div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                         <label for="validationServer03">Confirm Password</label>
-                                        <input type="text" name="password" onkeyup="saveValue(this)" class="form-control is-invalid" id="validationServer03" placeholder="Confirm Password*" required>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid city.
-                                        </div>
+                                        <input type="text" name="password" onkeyup="saveValue(this)" class="form-control " id="validationServer03" placeholder="Confirm Password*" required>
+                                        <div class="invalid-feedback" style="display:none;"></div>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -193,38 +190,97 @@
     </div> -->
     <script src="JS/jquery.js"></script>
     <script>
+
     $(document).ready(function(){
+        function valid(a,text,clas,feed){
+            $(a).addClass(clas);
+            $(a).next().addClass(feed);
+            $(a).next().text(text);
+            $(a).next().show();
+            return false; 
+        }
+        function remove(a,b,feed){
+            $(a).removeClass(b);
+            $(a).next().removeClass(feed)
+        }
+        function removeall(a){
+            remove(a,"is-invalid","invalid-feedback")
+            valid(a,"","is-valid","valid-feedback");
+        }
         $("#validationServer01").on("blur", function(){
-            let email = $(this).val();
-            if(email !== ""){
-                $(this).removeClass("wrong");
-                $("#emailHelp").hide();
-                $("#emailHelp1").hide();
+            let name = $(this).val();
+            if(name == ""){
+                valid(this,"Please fill your name!","is-invalid","invalid-feedback");
             }
-            if(email == ""){
-                $("#emailHelp").html("Please fill the section")
-                return false; 
+            else if(name.length < 3){
+                valid(this,"Write your full name!","is-invalid","invalid-feedback");
             }
-        });
-        $("#exampleInputPassword1").on("blur", function(){
-            let pass = $("#exampleInputPassword1").val();
-            if(pass !== ""){
-                $(this).removeClass("wrong");
-                $("#emailHelp2").hide();
+            else if(name.match(/[0-9]/g)){
+                valid(this,"Name must start with letters!","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
             }
         });
-        $("#login").on("click", function(){
-            let email = $("#exampleInputEmail1").val();
-            let pass = $("#exampleInputPassword1").val();
-            if(email == ""){
-                $("#exampleInputEmail1").addClass("wrong");
-                $("#emailHelp1").show().text("Please Fill Username!");
-                return false; 
+        $("#validationServerUsername").on("blur", function(){
+            let username = $(this).val();
+            if(username == ""){
+                valid(this,"Please fill your username!","is-invalid","invalid-feedback");
             }
-            if(pass == ""){
-                $("#exampleInputPassword1").addClass("wrong");
-                $("#emailHelp2").show().text("Please Enter Your Password");
-                return false; 
+            else if(username.length < 3){
+                valid(this,"Write your full username!","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
+            }
+        });
+        $("#validationServer05").on("blur", function(){
+            let Email = $(this).val();
+            if(Email == ""){
+                valid(this,"Please fill your Email !","is-invalid","invalid-feedback");
+            }
+            else if(Email.indexOf('@' ) == 0 || !Email.match('@')){
+                valid(this,"Enter Valid Email !","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
+            }
+        });
+        $("#validationServer04").on("blur", function(){
+            let Phone = $(this).val();
+            if(Phone == ""){
+                valid(this,"Please fill your Phone Number !","is-invalid","invalid-feedback");
+            }
+            else if(Phone.length!=10){
+                valid(this,"Enter Valid Phone Number !","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
+            }
+        });
+        $("#validationServer07").on("blur", function(){
+            let Password = $(this).val();
+            if(Password == ""){
+                valid(this,"Please fill your Password !","is-invalid","invalid-feedback");
+            }/* else if(!Password.match(/[A-Z]/g)){
+                valid(this,"Please use Capital letter as well..!","is-invalid","invalid-feedback");
+            }else if(!Password.match(/[a-z]/g)){
+                valid(this,"Please use number as well..!","is-invalid","invalid-feedback");
+            }else if(!Password.match(/[0-9]/g)){
+                valid(this,"Please use number as well..!","is-invalid","invalid-feedback");
+            }else if(!Password.match(/[@!#$%^&*]/g)){
+                valid(this,"Please use special character as well..!","is-invalid","invalid-feedback");
+            } */else if(Password.length < 8){
+                valid(this,"Password must be more than 7 digits!","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
+            }
+        });
+        $("#validationServer03").on("blur", function(){
+            let conpassword = $(this).val();
+            let password = $("#validationServer07").val();
+            if(password == ""){
+                valid(this,"Please confirm your Password !","is-invalid","invalid-feedback");
+            }else if(conpassword != password){
+                valid(this,"Password does not match!!","is-invalid","invalid-feedback");
+            }else{
+                removeall(this);
             }
         });
         

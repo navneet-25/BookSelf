@@ -30,6 +30,13 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
         }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0; 
+        }
     </style>
     <title>Checkout</title>
 </head>
@@ -52,7 +59,7 @@
         </div>
         <div id="row" style="padding: 2rem 1rem 5px 1rem;">
             <h5 class="sya">Select Your Address</h5>
-            <p class="sya1">Is the address you'd like to use displayed below? If so, click the corresponding "Deliver to this address" button. Or you <span id="clickme">can enter a new delivery address.</span></p>
+            <p class="sya1">Is the address you'd like to use displayed below? If so, click the corresponding "Deliver to this address" button. Or you <span class="clickme" style="color: blue;cursor: pointer;">can enter a new delivery address.</span></p>
         </div>
         <hr>
         <div id="address" class="row">
@@ -131,7 +138,12 @@
             }
         })
     })
-    $("#clickme").click(function() {
+    $(".clickme").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".table").offset().top},
+        'slow');
+    });
+    $(document).on("click", ".clickme", function(){
     $('html,body').animate({
         scrollTop: $(".table").offset().top},
         'slow');

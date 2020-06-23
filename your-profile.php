@@ -12,7 +12,7 @@
                             $run = mysqli_query($conn, $query) or die("okdie");
                             $reslut = mysqli_fetch_assoc($run);
                             ?>
-                            <img id="user-img" src="img/user-boy.png" class="border rounded-circle mx-auto d-block" alt="">
+                            <img id="user-img" src=<?php if($reslut['user_gend'] == "Male"){ echo "img/user-boy.png";}else{ echo "img/user-girl.png";} ?> class="border rounded-circle mx-auto d-block" alt="">
                             <h4 class="card-title text-center my-3"><?php echo $reslut['user_n'] ?></h4>
                             <hr style="width:80%;margin:auto;">
                             <p style="margin:5px;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $reslut['user_email'] ?></p>
@@ -22,9 +22,10 @@
                 </div>
             </div>
         </div>
+        <hr class="d-lg-none">
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-xl-4 my-2 col-lg-6">
                 <div class="card border rounded mx-auto" style="box-shadow: 0px 0px 10px 0px #f5f5f5;width:20rem;">
                 <a href="orders.php" style="text-decoration:none;color:black">
                     <div class="card-body">
@@ -41,7 +42,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xl-4 my-2 col-lg-6">
                 
                 <div class="card scard border rounded mx-auto" style="box-shadow: 0px 0px 10px 0px #f5f5f5;width:20rem;">
                     <a href="" style="text-decoration:none;color:black">
@@ -59,7 +60,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xl-4 my-2">
                 <div class="card scard border rounded mx-auto" style="box-shadow: 0px 0px 10px 0px #f5f5f5;width:20rem;">
                     <a href="yourac.php" style="text-decoration:none;color:black">
                     <div class="card-body">
