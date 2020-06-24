@@ -1,3 +1,10 @@
+<?php
+include "../include/config.php";
+session_start();
+if(!isset($_SESSION["username"])){
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,12 +34,43 @@
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_html5.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
     <link href="assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+    <style>
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+img.vert-move {
+    -webkit-animation: mover 0.7s infinite  alternate;
+    animation: mover 0.7s infinite  alternate;
+}
+img.vert-move{
+    width: auto;
+    height: 480px;
+}
+img.vert-move {
+    -webkit-animation: mover 0.7s infinite  alternate;
+    animation: mover 0.7s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+    </style>
+    
+    
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>
 <body class="alt-menu sidebar-noneoverflow">
     <!-- BEGIN LOADER -->
-    <div id="load_screen"> <div class="loader"> <div class="loader-content"> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 792 723" style="enable-background:new 0 0 792 723;" xml:space="preserve"> <g> <g> <path class="st0" d="M213.9,584.4c-47.4-25.5-84.7-60.8-111.8-106.1C75,433.1,61.4,382,61.4,324.9c0-57,13.6-108.1,40.7-153.3 S166.5,91,213.9,65.5s100.7-38.2,159.9-38.2c49.9,0,95,8.8,135.3,26.3s74.1,42.8,101.5,75.7l-85.5,78.9 c-38.9-44.9-87.2-67.4-144.7-67.4c-35.6,0-67.4,7.8-95.4,23.4s-49.7,37.4-65.4,65.4c-15.6,28-23.4,59.8-23.4,95.4 s7.8,67.4,23.4,95.4s37.4,49.7,65.4,65.4c28,15.6,59.7,23.4,95.4,23.4c57.6,0,105.8-22.7,144.7-68.2l85.5,78.9 c-27.4,33.4-61.4,58.9-102,76.5c-40.6,17.5-85.8,26.3-135.7,26.3C314.3,622.7,261.3,809.9,213.9,584.4z"/> </g> <circle class="st1" cx="375.4" cy="322.9" r="100"/> </g> <g> <circle class="st2" cx="275.4" cy="910" r="65"></circle> <circle class="st4" cx="475.4" cy="910" r="65"></circle> </g> </svg> </div></div></div>
+        <div id="load_screen"> <div class="loader"> <div class="loader-content"> <img src="../img/user.png" class="vert-move" /><h4 class="text-center" style="margin: -40px;">@BookSelf Loading...</h4> </div></div></div>
     <!--  END LOADER -->
 
     <!--  BEGIN NAVBAR  -->
@@ -154,12 +192,12 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
                     </a>
                     <div class="dropdown-menu position-absolute e-animated e-fadeInUp" aria-labelledby="userProfileDropdown">
-                        <div class="user-profile-section">                            
+                        <div class="user-profile-section" style="padding:6px;">                            
                             <div class="media mx-auto">
-                                <img src="assets/img/profile-7.jpg" class="img-fluid mr-2" alt="avatar">
+                                <img src="../img/user-boy.png" class="img-fluid mr-2" alt="avatar">
                                 <div class="media-body">
-                                    <h5>Alan Green</h5>
-                                    <p>Web Developer</p>
+                                    <h5><?php echo $_SESSION['admin_name']; ?></h5>
+                                    <p><?php echo $_SESSION['username']; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +217,7 @@
                             </a>
                         </div>
                         <div class="dropdown-item">
-                            <a href="auth_login.html">
+                            <a href="logout_admin.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Log Out</span>
                             </a>
                         </div>
@@ -188,4 +226,5 @@
             </ul>
         </header>
     </div>
+    
     <!--  END NAVBAR  -->

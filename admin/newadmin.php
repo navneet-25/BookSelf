@@ -432,7 +432,4 @@
         </div>
         <!--  END CONTENT AREA  -->
 
-    </div>
-    <!-- END MAIN CONTAINER -->
-
     <?php include "footer1.php"; ?>

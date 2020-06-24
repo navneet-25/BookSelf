@@ -1,3 +1,5 @@
+</div>
+<!-- END MAIN CONTAINER -->
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>
@@ -20,6 +22,8 @@
     <script src="plugins/file-upload/file-upload-with-preview.min.js"></script>
     <script src="plugins/table/datatable/datatables.js"></script>
     <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="plugins/bootstrap-touchspin/custom-bootstrap-touchspin.js"></script>
     <script>
         //First upload
         var firstUpload = new FileUploadWithPreview('myFirstImage')

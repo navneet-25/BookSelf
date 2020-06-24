@@ -71,7 +71,7 @@ if(isset($_SESSION["username"])){
                                     $_SESSION['admin_name'] = $rows['admin_name'];
                                     $_SESSION["username"] = $rows['admin_username'];
 
-                                    header("Location: main.php");
+                                    header("Location: newadmin.php");
                               }
 
                             }else{

@@ -3,19 +3,11 @@
 if(isset($_POST['submit'])){
                     include "../include/config.php";
                     //For Image
-                    $query1 = "SELECT * FROM books";
-                    $run = mysqli_query($conn, $query1) or die("ok PROB");
-                    $book_name = $_POST['book_name'];
-                    $array = array();
-                    while($reslut = mysqli_fetch_assoc($run)){
-                    $array[] = $reslut['book_name'];
-                    }
-                    if(!in_array($book_name, $array)){
-                        if(file_exists($_FILES['book_img']['tmp_name'])){
-                            $file_name = $_FILES['book_img']['name'];
-                            $file_size = $_FILES['book_img']['size'];
-                            $file_tmp = $_FILES['book_img']['tmp_name'];
-                            $file_type = $_FILES['book_img']['type'];
+                        if(file_exists($_FILES['bookimg']['tmp_name'])){
+                            $file_name = $_FILES['bookimg']['name'];
+                            $file_size = $_FILES['bookimg']['size'];
+                            $file_tmp = $_FILES['bookimg']['tmp_name'];
+                            $file_type = $_FILES['bookimg']['type'];
                             $file1 = explode('.', $file_name);
                             $file2 = end($file1);
                             $file_ext = strtolower($file2);
@@ -36,22 +28,29 @@ if(isset($_POST['submit'])){
                         }else{
                             $book_img = "";
                         }
+                        $book_name = $_POST['bookname'];
+                        $book_price = $_POST['bookprice'];
+                        $discount = $_POST['discount'];
+                        $sellp = $_POST['sellingprice'];
+                        if($_POST['writer']){
+                        $writer = $_POST['writer'];
+                    }else{
+                        $writer = "BookSelf";
+                    }
+                        $category = $_POST['category'];
+                        $stock = $_POST['demo3_21'];
+                        $book_discription = $_POST['discription'];
+
                         
-                        $book_discription = $_POST['book_discription'];
-                        $book_price = $_POST['book_price'];
-                        $category = $_POST['category1'];
-                        $stock = $_POST['stock'];
-                        $query = "INSERT INTO books(book_name,book_price,book_discription,book_img,category,stock)
-                                VALUES ('{$book_name}', '{$book_price}', '{$book_discription}', '{$book_img}','{$category}',{$stock});
+                        
+                        $query = "INSERT INTO `books`(`book_name`, `book_price`, `book_discription`, `stock`, `category`, `book_img`, `book_sp`, `book_disc`, `Writer`)
+                                    VALUES ('{$book_name}','{$book_price}', '{$book_discription}', '{$stock}', '{$category}', '{$book_img}','{$sellp}', '{$discount}', '{$writer}');
                                     UPDATE category SET total_books = total_books + 1 WHERE cat_id = {$category}";
                             if(mysqli_multi_query($conn, $query)){
-                                header("Location: main.php");
+                                header("Location: allbooks.php");
                             }else{
                                 echo mysqli_error($conn);
                                 echo $error;
-                            }
-                    }else{
-                        echo "alert('Book Alredy Exist')";
-                    }
+                            } 
 }
 ?>

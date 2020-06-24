@@ -13,7 +13,7 @@ $sql = "DELETE FROM books WHERE book_id = {$delid};
 
 if(mysqli_multi_query($conn, $sql)){
     unlink("../img/book-image/".$result['book_img']);
-    header("Location: main.php");
+    header("Location: allbooks.php");
 }else{
     die("QUERRY FAILED");
 }

@@ -63,21 +63,6 @@
                     <li>
                         <a href="addbook.php"> Add Book </a>
                     </li>
-                    <li>
-                        <a href="auth_pass_recovery_boxed.html"> Recover ID Boxed </a>
-                    </li>
-                    <li>
-                        <a href="auth_login.html"> Login Cover </a>
-                    </li>
-                    <li>
-                        <a href="auth_register.html"> Register Cover </a>
-                    </li>
-                    <li>
-                        <a href="auth_lockscreen.html"> Unlock Cover </a>
-                    </li>
-                    <li>
-                        <a href="auth_pass_recovery.html"> Recover ID Cover </a>
-                    </li>
                 </ul>
             </li>
 
@@ -100,7 +85,7 @@
             </li>
 
             <li class="menu">
-                <a href="apps_notes.html" aria-expanded="false" class="dropdown-toggle">
+                <a href="users.php" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/user-male.png" style="width:auto;height:21px;">
                         <span>&nbsp;&nbsp; Users</span>
