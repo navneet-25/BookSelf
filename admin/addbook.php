@@ -115,7 +115,7 @@
 
     </div>
     <!-- END MAIN CONTAINER -->
-    <script src="../JS/jquery.js"></script>
+    
     <script>
         $("#bookname").on("blur", function(){
         var bookname = $(this).val();

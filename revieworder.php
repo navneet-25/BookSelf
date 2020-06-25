@@ -23,9 +23,13 @@ if(!isset($_SESSION['user'])){
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <style>
+        body{
+            font-family: 'Muli', sans-serif;
+        }
         /* Safari */
         @-webkit-keyframes spin {
         0% { -webkit-transform: rotate(0deg); }
@@ -50,7 +54,6 @@ if(!isset($_SESSION['user'])){
             font-size: 23px;
             line-height: 1.3;
             font-weight: 700;
-            font-family: Arial,sans-serif;
             text-rendering: optimizeLegibility;
         }
         .alert1{
@@ -85,7 +88,7 @@ if(!isset($_SESSION['user'])){
         <div class="row">
             <div class="col-sm-3">
                 <div id="logo" style="margin:1.5rem;">
-                   <a href="index.php" style="text-decoration:none"><h3 style="display:inline;color: rgb(0, 0, 175);">Book<span style="color: rgb(255, 95, 95);">Self</span><span class="span">.com</span></h3></a> 
+                   <a href="index.php" style="text-decoration:none"><h3 style="display:inline;color: rgb(0, 0, 175);">Book<span style="color: rgb(255, 95, 95);">Self</span><span class="span" style="font-size:16px;color:black;">.com</span></h3></a> 
                 </div>
             </div>
             <div class="col-sm-6">

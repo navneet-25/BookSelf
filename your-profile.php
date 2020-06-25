@@ -35,7 +35,7 @@
                             </div>
                             <div class="d-inline col-sm-9">
                             <h4 class="d-inline" style="">Your Orders</h4>
-                            <p class="small text-secondary" style="margin-bottom:0;">Track, Return, or buy things again</p>
+                            <p class="small text-secondary" style="margin-bottom:0;">All about your orders</p>
                             </div>
                         </div>
                     </div>

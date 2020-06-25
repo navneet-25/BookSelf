@@ -12,11 +12,17 @@
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/cssfile2.css">
     <style>
+    body{
+        font-family: 'Quicksand', sans-serif;
+        font-weight:500;
+        font-size:16px;
+    }
         .badge {
             padding-left: 9px;
             padding-right: 9px;

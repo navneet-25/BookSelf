@@ -16,10 +16,15 @@
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="CSS/checkout.css">
     <style>
+    body{
+            font-family: 'Muli', sans-serif;
+            font-weight:500;
+        }
         /* Safari */
         @-webkit-keyframes spin {
         0% { -webkit-transform: rotate(0deg); }
@@ -44,8 +49,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <div id="logo" style="margin:1.5rem;">
-                   <a href="index.php" style="text-decoration:none"><h3 style="display:inline;color: rgb(0, 0, 175);">Book<span style="color: rgb(255, 95, 95);">Self</span><span class="span">.com</span></h3></a> 
+                <div id="logo" style="margin:1.5rem;font-family: 'Raleway', sans-serif;">
+                   <a href="index.php" style="text-decoration:none;"><h3 style="display:inline;color: rgb(0, 0, 175);">Book<span style="color: rgb(255, 95, 95);">Self</span><span class="span">.com</span></h3></a> 
                 </div>
             </div>
             <div class="col-sm-6">

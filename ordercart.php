@@ -29,7 +29,7 @@
                         <img src='{$src}' class='d-block mx-auto mt-1' style='max-width: 100%;max-height:79px;' alt=''>
                     </div>
                     <div class='col-sm-10'>
-                        <h6 style='font-size: 15px;font-family: Arial, Helvetica, sans-serif;margin-bottom: 3px;'>{$rows['book_name']}</h6>
+                        <h6 style='font-size: 15px;margin-bottom: 3px;'>{$rows['book_name']}</h6>
                         <p class='d-inline' style='text-decoration: line-through;color: rgb(131, 131, 131);font-size: 12px;'><i>₹.100.00</i></p>
                         <p class='d-inline ml-1' style='font-weight: 600; color: rgb(255, 77, 77);font-size: 14px;'> ₹.{$rows['book_price']}</p>
                         <img src='img/verif.JPG' style='width: auto;height: 15px;margin-bottom: 5px;' alt=''>

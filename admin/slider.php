@@ -67,12 +67,26 @@
             </li>
 
             <li class="menu">
-                <a href="apps_mailbox.html" aria-expanded="false" class="dropdown-toggle">
+                <a href="#delivery" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <img src="https://img.icons8.com/cotton/64/000000/document-delivery.png" style="width:auto;height:21px;">
-                        <span>&nbsp;&nbsp; Delivery</span>
+                        <span>&nbsp;&nbsp; Orders</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
+                <ul class="collapse submenu list-unstyled" id="delivery" data-parent="#accordionExample">
+                    <li>
+                        <a href="allpendingorders.php"> All Orders </a>
+                    </li>
+                    <li>
+                        <a href="bookstatus.php"> Books Status </a>
+                    </li>
+                    <li>
+                        <a href="addbook.php"> Add Book </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="menu">
