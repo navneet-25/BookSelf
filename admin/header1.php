@@ -35,6 +35,9 @@ if(!isset($_SESSION["username"])){
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_html5.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
     <link href="assets/css/tables/table-basic.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/components/tabs-accordian/custom-tabs.css" rel="stylesheet" type="text/css" />
     <style>
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 

@@ -28,7 +28,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-                                                <button id="change" type="button" class="btn btn-primary">Save</button>
+                                                <button id="change" type="button" class="btn btn-primary snackbar-bg-success">Save</button>
                                             </div>
                                         </div>
                                     </div>
@@ -63,6 +63,13 @@
     </div>
     <!-- END MAIN CONTAINER -->
     <script>
+        $('.snackbar-bg-success').click(function() {
+            Snackbar.show({
+                text: 'Order Status Changed',
+                actionTextColor: '#fff',
+                backgroundColor: '#8dbf42'
+            });
+        });
 $(document).ready(function(){
     // Load Table Records
     function loadTable(){

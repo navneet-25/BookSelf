@@ -17,8 +17,8 @@
                     <option value='1' selected>Recived</option>
                 </optgroup>
                 <optgroup label='Shipping'>
-                    <option value='2'>Getting reddy for shipping</option>
-                    <option value='3'>Shipped</option>
+                    <option value='2'>Shipped</option>
+                    <option value='3'>Dispached</option>
                 </optgroup>
                 <optgroup label='Delivery'>
                     <option value='5'>Out for delivery</option>
@@ -34,8 +34,8 @@
                     <option value='1'>Recived</option>
                 </optgroup>
                 <optgroup label='Shipping'>
-                    <option value='2' selected>Getting reddy for shipping</option>
-                    <option value='3'>Shipped</option>
+                    <option value='2' selected>Shipped</option>
+                    <option value='3'>Dispached</option>
                 </optgroup>
                 <optgroup label='Delivery'>
                     <option value='5'>Out for delivery</option>
@@ -50,8 +50,8 @@
                     <option value='1'>Recived</option>
                 </optgroup>
                 <optgroup label='Shipping'>
-                    <option value='2'>Getting reddy for shipping</option>
-                    <option value='3' selected>Shipped</option>
+                    <option value='2'>Shipped</option>
+                    <option value='3' selected>Dispached</option>
                 </optgroup>
                 <optgroup label='Delivery'>
                     <option value='5'>Out for delivery</option>
@@ -68,8 +68,8 @@
                     <option value='1'>Recived</option>
                 </optgroup>
                 <optgroup label='Shipping'>
-                    <option value='2'>Getting reddy for shipping</option>
-                    <option value='3'>Shipped</option>
+                    <option value='2'>Shipped</option>
+                    <option value='3'>Dispached</option>
                 </optgroup>
                 <optgroup label='Delivery'>
                     <option value='5' selected>Out for delivery</option>
@@ -84,8 +84,8 @@
                     <option value='1'>Recived</option>
                 </optgroup>
                 <optgroup label='Shipping'>
-                    <option value='2'>Getting reddy for shipping</option>
-                    <option value='3'>Shipped</option>
+                    <option value='2'>Shipped</option>
+                    <option value='3'>Dispached</option>
                 </optgroup>
                 <optgroup label='Delivery'>
                     <option value='5'>Out for delivery</option>

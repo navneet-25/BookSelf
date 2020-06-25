@@ -24,6 +24,8 @@
     <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
     <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
     <script src="plugins/bootstrap-touchspin/custom-bootstrap-touchspin.js"></script>
+    <script src="assets/js/components/notification/custom-snackbar.js"></script>
+    <script src="plugins/notification/snackbar/snackbar.min.js"></script>
     <script>
         //First upload
         var firstUpload = new FileUploadWithPreview('myFirstImage')

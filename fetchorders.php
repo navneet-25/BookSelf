@@ -56,31 +56,45 @@
                                     </div>
                                     <div class='col-sm-5'>";
                                     if($rows['status'] == 1){
-                                         $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#090;font-size:17px;'>Delivery By: ".date("d-M-Y", time() + 86400 * 5)."</h6>";
-                                    }elseif($rows['status'] == 4){
-                                         $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#d40e00;font-size:17px;'>Order Cancelled</h6>";
-                                    }
-                                    if($rows['status'] == 1){
-                                        $output .= "<div style='background-color: rgb(0, 204, 0); width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Received &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is received to BookSelf</span></p><br>";
+                                         $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#51ba00;font-size:17px;'>Delivery By: ".date("d-M-Y", time() + 86400 * 5)."</h6>";
+                                    }elseif($rows['status'] == 2){
+                                        $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#d40e00;font-size:17px;'>Order Shipped</h6>";
+                                   }elseif($rows['status'] == 3){
+                                    $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#5c5c5c;font-size:17px;'>Order Dispached</h6>";
                                    }elseif($rows['status'] == 4){
-                                    $output .= "<div style='background-color: red; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Returning &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is returning to BookSelf</span></p><br>";
+                                         $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#d40e00;font-size:17px;'>Order Cancelled</h6>";
+                                   }elseif($rows['status'] == 5){
+                                    $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#ed9a00;font-size:17px;'>Out For Delivery</h6>";
+                                   }elseif($rows['status'] == 6){
+                                        $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:black;font-size:17px;'>Order Delivered</h6>";
+                                   }
+                                    if($rows['status'] == 1){
+                                        $output .= "<div style='background-color: #51ba00; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Received &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is received to BookSelf</span></p><br>";
+                                   }elseif($rows['status'] == 2){
+                                    $output .= "<div style='background-color: #0062b3; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Shipping &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is Shipped</span></p><br>";
+                                   }elseif($rows['status'] == 3){
+                                    $output .= "<div style='background-color: #5c5c5c; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Reaching &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order has been dispached</span></p><br>";
+                                   }elseif($rows['status'] == 4){
+                                    $output .= "<div style='background-color: red; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Returning &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is returning to BookSelf</span></p><br>";
+                                   }elseif($rows['status'] == 5){
+                                    $output .= "<div style='background-color: #ed9a00; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Atempting Delivery &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is out for delivery</span></p><br>";
+                                   }elseif($rows['status'] == 6){
+                                    $output .= "<div style='background-color: black; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Deliverd &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Deliverd, Thank You for using bookself</span></p><br>";
                                    }
                         
                 $output .=      "<!-- <div style='background-color: rgb(247, 230, 0); width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(124, 124, 124);'> Order Shipping &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp; Your order is shipped by BookSelf</p><br>
                                         <div style='background-color: rgb(255, 37, 37); width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(124, 124, 124);'> Deliverd Order &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp; Your Book Successfully Deliverd</p><br> -->
                                             <div class='row' id='ocot'>
-                                                <div class='col-sm mt-3'>";
-                                                if($rows['status'] == 1){
+                                                <div class='col-lg mt-3'>";
+                                                if($rows['status'] !== 4){
                                                     $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border' data-toggle='modal' data-target='#modal' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);'>Cancel Order</button>";
                                                }elseif($rows['status'] == 4){
-                                                    $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);' disabled>Cancel Order</button>";
+                                                    $output .= "<button id='cancel' data-id='{$rows['id']}' class='btn border d-block mx-auto' style='padding:3px 10px;background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);' disabled>Cancel Order</button>";
                                                }
                                    
                         $output .=              "</div>
-                                                <div class='col-sm mt-3'>
-                                                    <p class='text-center' style='font-size:20px;font-weight:200;'> | </p>
-                                                </div>
-                                                <div class='col-sm mt-3'>
+                                                    <p style='margin: 20px 6px 0 0;'>| </p>
+                                                <div class='col-lg mt-3'>
                                                     <button class='btn border' style='padding:3px 10px;color:background: rgb(238,238,238);background: linear-gradient(180deg, rgba(238,238,238,1) 0%, rgba(214,214,214,1) 100%);' disabled>Track Your Order</button>
                                                 </div>
                                             </div>

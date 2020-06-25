@@ -102,7 +102,7 @@
                                                         <div class="custom-file-container__image-preview"></div>
                                                     </div>
                                     </div>
-                                <button type="submit" id="add" name="submit" class="btn mt-3 w-50 d-block mx-auto" style="background-color: #ff5252;color: white;">Add Book</button>
+                                <button type="submit" id="add" name="submit" class="btn mt-3 w-50 d-block mx-auto success" style="background-color: #ff5252;color: white;">Add Book</button>
                                 </form>
                             </div>
                     </div>
@@ -117,8 +117,28 @@
     <!-- END MAIN CONTAINER -->
     
     <script>
+        $('#add').on('click', function() {
+            $.blockUI({
+                message: '<svg> ... </svg>',
+                fadeIn: 800,
+                overlayCSS: {
+                    backgroundColor: '#1b2024',
+                    opacity: 0.8,
+                    zIndex: 1200,
+                    cursor: 'wait'
+                },
+                css: {
+                    border: 0,
+                    color: '#fff',
+                    zIndex: 1201,
+                    padding: 0,
+                    backgroundColor: 'transparent'
+                }
+            });
+        });
         $("#bookname").on("blur", function(){
         var bookname = $(this).val();
+        if(!bookname == ""){
             $.ajax({
                 url : "ajaxfile.php",
                 type : "POST",
@@ -139,6 +159,12 @@
                     }
                 }
             }) 
+        }else if(bookname == ""){
+            $("#bookname").removeClass("is-invalid");
+            $(".invalid-feedback").hide();
+            $("#bookname").removeClass("is-valid");
+            $(".valid-feedback").hide();
+        }
         });
         $("#bookprice").keyup(function(){
             let bp = $(this).val();

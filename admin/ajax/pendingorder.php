@@ -1,7 +1,7 @@
 <?php
         include "../../include/config.php";
 
-                    $query1 = "SELECT * FROM pending_order JOIN users ON pending_order.user = users.user_id JOIN addresses ON pending_order.address = addresses.add_id ORDER BY id ASC";
+                    $query1 = "SELECT * FROM pending_order JOIN users ON pending_order.user = users.user_id JOIN addresses ON pending_order.address = addresses.add_id ORDER BY id DESC";
                     
                     $run = mysqli_query($conn, $query1) or die("ok PROB");
 
@@ -16,13 +16,13 @@
                             if($rows->status == 1){
                                 $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class=' badge badge-dark'>Recived</span>";
                             }elseif($rows->status == 2){
-                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-secondary'>Shipping</span>";
+                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-secondary'>Shipped</span>";
                             }elseif($rows->status == 3){
-                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-primary'>Shipped</span>";
+                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-warning'>Dispached</span>";
                             }elseif($rows->status == 4){
                                 $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-danger'>Canceled</span>";
                             }elseif($rows->status == 5){
-                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-warning'>Delivering</span>";
+                                $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-info'>Atemting</span>";
                             }elseif($rows->status == 6){
                                 $output .= "<span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-success'>Deliverd</span>";
                             }
@@ -37,8 +37,8 @@
                             $output .= "</td>
                                         <td style='width:5%;text-align:center;'>{$rows->book_quant}</td>
                                         <td style='width:10%;text-align:center;'>₹ {$rows->total_amount}</td>
-                                        <td style='width:13%;text-align:center;'>{$rows->user_name}</td>
-                                        <td style='width:22%;text-align:center;'>{$rows->address_name}<br>City:{$rows->city}</td>
+                                        <td style='width:13%;text-align:center;'>{$rows->user_n}</td>
+                                        <td style='width:22%;text-align:center;'>Ordered By: {$rows->user_name}<br>{$rows->address_name}<br>City: {$rows->city}</td>
                                         <td class='text-center'>
                                             <div class='dropdown custom-dropdown'>
                                                 <a class='dropdown-toggle' href='#' role='button' id='dropdownMenuLink1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
