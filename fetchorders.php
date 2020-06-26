@@ -58,7 +58,7 @@
                                     if($rows['status'] == 1){
                                          $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#51ba00;font-size:17px;'>Delivery By: ".date("d-M-Y", time() + 86400 * 5)."</h6>";
                                     }elseif($rows['status'] == 2){
-                                        $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#d40e00;font-size:17px;'>Order Shipped</h6>";
+                                        $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#0062b3;font-size:17px;'>Order Shipped</h6>";
                                    }elseif($rows['status'] == 3){
                                     $output .= "<h6 style='line-height: 1.4;text-align:center;font-weight:700!important;color:#5c5c5c;font-size:17px;'>Order Dispached</h6>";
                                    }elseif($rows['status'] == 4){
@@ -71,7 +71,7 @@
                                     if($rows['status'] == 1){
                                         $output .= "<div style='background-color: #51ba00; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Received &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is received to BookSelf</span></p><br>";
                                    }elseif($rows['status'] == 2){
-                                    $output .= "<div style='background-color: #0062b3; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Shipping &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is Shipped</span></p><br>";
+                                    $output .= "<div style='background-color: #0062b3; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Shipping &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order is Shipped by BookSelf</span></p><br>";
                                    }elseif($rows['status'] == 3){
                                     $output .= "<div style='background-color: #5c5c5c; width: 8px;height: 8px;border-radius: 50%;display: inline-block;'></div><p style='font-size: 12px;display: inline;color: rgb(75, 75, 75);'> Order Reaching &nbsp;&nbsp; | &nbsp;&nbsp;<span style='color: rgb(116, 116, 116);'> Your order has been dispached</span></p><br>";
                                    }elseif($rows['status'] == 4){

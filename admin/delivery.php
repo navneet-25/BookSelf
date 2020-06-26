@@ -10,7 +10,8 @@
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
                             <div class="widget-titel text-center">
-                                <h4>All Pending Orders</h4>
+                                <h4>Delivery Pannel <img src="icons/delivery.png" alt="" style="width:auto;height:39px;"></h4>
+
                             </div>
                             <div class="table-responsive mb-4 mt-4">
                                 <!-- Modal -->
@@ -40,9 +41,9 @@
                                             <th>Name</th>
                                             <th>Status</th>
                                             <th>Quant</th>
-                                            <th class="text-center">Amount</th>
-                                            <th class="text-center">User</th>
-                                            <th class="text-center">Address</th>
+                                            <th class="text-center">Total Amount</th>
+                                            <th class="text-center">Owner</th>
+                                            <th class="text-center">Adderss</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -68,13 +69,13 @@
                 text: 'Order Status Changed',
                 actionTextColor: '#fff',
                 backgroundColor: '#8dbf42'
-            }); 
+            });
         });
 $(document).ready(function(){
     // Load Table Records
     function loadTable(){
       $.ajax({
-        url : "ajax/pendingorder.php",
+        url : "ajax/deliveryajax.php",
         type : "POST",
         success : function(data){
           $("#append").html(data);
@@ -85,7 +86,7 @@ $(document).ready(function(){
     $(document).on("click", "#statusindi" ,function(){
         let x = $(this).data("oid");
         $.ajax({
-            url : "ajax/status.php",
+            url : "ajax/del-status.php",
             type : "POST",
             data : {id : x},
             success : function(data){
@@ -97,15 +98,15 @@ $(document).ready(function(){
         let x = $("#mgct").val();
         let y = $("#mgctt").val();
         $.ajax({
-            url : "ajax/change.php",
+            url : "ajax/del-change.php",
             type : "POST",
             data : {changeid : x, id : y},
             success : function(data){
                 if(data == 1){
-                $("#exampleModal").modal("hide");
-                loadTable();
+                    $("#exampleModal").modal("hide");
+                    loadTable();
                 }else{
-                    alert(data);
+                 $("#exampleModal").modal("hide");
                 }
             }
       });

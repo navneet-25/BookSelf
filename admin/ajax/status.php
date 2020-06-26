@@ -20,10 +20,6 @@
                     <option value='2'>Shipped</option>
                     <option value='3'>Dispached</option>
                 </optgroup>
-                <optgroup label='Delivery'>
-                    <option value='5'>Out for delivery</option>
-                    <option value='6'>Delivered</option>
-                </optgroup>
             </select>
             <input id='mgctt' type='hidden' value='{$getid}' />
             ";
@@ -37,10 +33,6 @@
                     <option value='2' selected>Shipped</option>
                     <option value='3'>Dispached</option>
                 </optgroup>
-                <optgroup label='Delivery'>
-                    <option value='5'>Out for delivery</option>
-                    <option value='6'>Delivered</option>
-                </optgroup>
             </select>
             <input id='mgctt' type='hidden' value='{$getid}' />
             ";
@@ -53,16 +45,12 @@
                     <option value='2'>Shipped</option>
                     <option value='3' selected>Dispached</option>
                 </optgroup>
-                <optgroup label='Delivery'>
-                    <option value='5'>Out for delivery</option>
-                    <option value='6'>Delivered</option>
-                </optgroup>
             </select>
             <input id='mgctt' type='hidden' value='{$getid}' />
             ";
         }elseif($result->status == 4){
             $output .= "<a href='cancelorders.php'> Please check it out!!</a>";
-        }elseif($result->status == 5){
+        }/* elseif($result->status == 5){
             $output .= "<select id='mgct' class='p-3 w-100' style='border-radius:5px;'>
                 <optgroup label='Recived'>
                     <option value='1'>Recived</option>
@@ -95,7 +83,7 @@
             <input id='mgctt' type='hidden' value='{$getid}' />
             ";
         }
-            
+            */ 
 
         echo $output;
 ?>

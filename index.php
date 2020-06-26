@@ -19,10 +19,8 @@ if(isset($_SESSION['user'])){
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <img src="img/offers/offer7.jpeg" class="img-fluid d-block mx-auto img-thumbnail" alt="">
-            </div>
+        <div class="row" id="faltoff">
+            
         </div>
         <div id="cards" class="row my-2">
                     <div class='col-md-3 my-1'>
@@ -118,6 +116,9 @@ if(isset($_SESSION['user'])){
     }); */
 
 $(document).ready(function(){
+    function flat(){
+        $("#faltoff").html("<div class='col'> <img src='img/offers/offer7.jpeg' class='img-fluid d-block mx-auto img-thumbnail' alt=''> </div>");
+    }
     // Load Table Records
     function loadTable(){
       $.ajax({
@@ -129,6 +130,7 @@ $(document).ready(function(){
       });
     }
     loadTable();
+    
     function loadproduct(cat){
         $.ajax({
             url : "product-nav.php",
@@ -160,6 +162,7 @@ $(document).ready(function(){
     }
 
     $(document).on("click", "#atc", function(){
+        $(this).text("Adding...");
         var book_id = $(this).data("id");
         var book_name = $(this).data("name");
         $.ajax({
@@ -179,6 +182,7 @@ $(document).ready(function(){
         });
     });
     $('#all').on('click', function(){
+        flat();
         loadTable();
     });
     $(document).on("click", "#nav-link", function(){

@@ -81,10 +81,10 @@
                         <a href="allpendingorders.php"> All Orders </a>
                     </li>
                     <li>
-                        <a href=""> Canceled Orders </a>
+                        <a href="delivery.php"> Delivery </a>
                     </li>
                     <li>
-                        <a href=""> Deliverd </a>
+                        <a href="canceled.php"> Canceled Orders </a>
                     </li>
                 </ul>
             </li>
