@@ -49,7 +49,7 @@
             <input id='mgctt' type='hidden' value='{$getid}' />
             ";
         }elseif($result->status == 4){
-            $output .= "<a href='cancelorders.php'> Please check it out!!</a>";
+            $output .= "<a href='canceled.php'> Please check it out!!</a>";
         }/* elseif($result->status == 5){
             $output .= "<select id='mgct' class='p-3 w-100' style='border-radius:5px;'>
                 <optgroup label='Recived'>

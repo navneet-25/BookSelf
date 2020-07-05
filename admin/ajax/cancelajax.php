@@ -1,7 +1,7 @@
 <?php
         include "../../include/config.php";
 
-                    $query1 = "SELECT * FROM pending_order JOIN users ON pending_order.user = users.user_id JOIN addresses ON pending_order.address = addresses.add_id WHERE status = 4 ORDER BY id DESC";
+                    $query1 = "SELECT * FROM cancel_orders JOIN pending_order ON cancel_orders.order_id = pending_order.id JOIN users ON pending_order.user = users.user_id JOIN addresses ON pending_order.address = addresses.add_id ORDER BY id DESC";
                     
                     $run = mysqli_query($conn, $query1) or die("ok PROB");
 
@@ -27,14 +27,12 @@
                             $output .= "</td>
                                         <td style='width:5%;text-align:center;'>{$rows->book_quant}</td>";
 
-                                        $query2 = "SELECT * FROM deliveryi";
-                                        $result = mysqli_fetch_object(mysqli_query($conn, $query2));
-                            if($result->ret_status == 0){
-                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$result->del_id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-dark'>Not Started Yet</span></td>";
-                            }elseif($result->ret_status == 1){
-                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$result->del_id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-warning'> Returning... </span></td>";
-                            }elseif($result->ret_status == 2){
-                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$result->del_id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-success'> Returned </span></td>";
+                            if($rows->can_status == 0){
+                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-dark'>Not Started Yet</span></td>";
+                            }elseif($rows->can_status == 1){
+                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-warning'> Returning... </span></td>";
+                            }elseif($rows->can_status == 2){
+                                $output .= " <td style='width:20%;text-align:center;'><span data-toggle='modal' id='statusindi' data-oid={$rows->id} style='cursor:pointer;' data-target='#exampleModal' class='badge badge-success'> Returned </span></td>";
                             }
                         $output .= " <td style='width:13%;text-align:center;'>BookSelf</td>
                                         <td class='text-center'>

@@ -17,6 +17,30 @@ include "slider.php"; ?>
                                     </div>
                                 </div>
                                     <div class="table-responsive">
+                                     <!-- Modal -->
+                                     <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+
+                                                            <div class="modal-header" id="registerModalLabel">
+                                                                <h4 class="modal-title">Add Stock</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                
+                                                            <form class='mt-0'>
+                                                                <div class='form-group'>
+                                                                <label for='stock'><b>Add Number</b></label>
+                                                                    <input type='number' name='demo3_21' class='form-control' id='stock' required>
+
+                                                                </div>
+                                                                <button id='add-btn' type='submit' class='btn btn-success mt-2 mb-2 btn-block'>Add</button>
+                                                                
+                                                            </form>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                         <table class="table table-bordered table-hover mb-4">
                                             <thead>
                                                 <tr>
@@ -30,33 +54,8 @@ include "slider.php"; ?>
                                                     <th class="text-center">Edit</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                            <?php
-                                                include "../include/config.php";
-                                                $query = "SELECT * FROM books ORDER BY book_id DESC";
-                                                $result = mysqli_query($conn, $query) or die("Query Dosest work");
-                                                $rows_count = mysqli_num_rows($result);
-                                                $count = 1;
-                                                if($rows_count > 0){
-                                                    while($rows = mysqli_fetch_assoc($result)){
-                                                        if($rows['book_img'] == ""){
-                                                            $src = "../img/noi.png";
-                                                        }else{
-                                                            $src = "../img/book-image/{$rows['book_img']}";
-                                                        }
-                                            ?>
-                                                <tr>
-                                                    <td class="text-center" style="width:5%"><?php echo $count; ?></td>
-                                                    <td class="text-center" style="width:10%"><img alt="avatar" class="img-fluid rounded" src="../img/book-image/<?php echo $rows['book_img']; ?>" style="width:auto;height:100px"></td>
-                                                    <td class="text-center w-25"><?php echo $rows['book_name']; ?></td>
-                                                    <td class="text-center">₹ <?php echo $rows['book_price']; ?></td>
-                                                    <td class="text-center"><?php echo $rows['stock']; ?></td>
-                                                    <td class="text-center"><span class="text-success">In Stock</span></td>
-                                                    <td class="text-center">100</td>
-                                                    <td class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2 icon"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></td>
-                                                </tr>
-                                                <?php $count++;}
-                                                } ?>
+                                            <tbody id="append">
+                                               
                                                 <tr>
                                                     <td> Alma Clarke</td>
                                                     <td>11/08/2019</td>
@@ -91,7 +90,49 @@ include "slider.php"; ?>
         </div>
     </div>
     <!--  END CONTENT AREA  -->
+    <script>
+            $("input[name='demo3_21']").TouchSpin({
+            initval: 30
+            });
+            </script>
+    <script>
+    $(document).ready(function(){
+        function load(){
+            $.ajax({
+                url : "ajax/bookstatusajax.php",
+                type : "POST",
+                success : function(data){
+                    $("#append").html(data);
+                }
+            });
+        }
+        load();
+    });
 
+        $(document).on("click", "#idch", function(){
+            let x = $(this).data("bid");
+            sessionStorage.setItem("productid", x);
+            
+        });
+        $("#add-btn").click(function(){
+                let y = $("#stock").val();
+                let x = sessionStorage.getItem("productid");
+                $.ajax({
+                    url : "ajax/add-stock.php",
+                    type : "POST",
+                    data : {id : x, stock : y},
+                    success : function(data){
+                        if(data = 1){
+                            location.reload();
+                        }else{
+                            alert(data);
+                        }
+                    }
+                })
+            })
+    
+            
+    </script>
 
 
 

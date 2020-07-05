@@ -26,11 +26,13 @@ if(mysqli_num_rows($run1) > 0){
         $quer2 = "INSERT INTO pending_order(book_name,book_quant,tracking_id,total_amount,date,payment_meth,user,address,book_img,bookid)
                     VALUES ('{$bookname}','{$bookquant}','{$trackingid}','{$bookprice}','{$date}','{$paymeth}','{$uid}','{$address}','{$src}','{$bookid}')";
         $run2 = mysqli_query($conn, $quer2);
+        $quer5 = "UPDATE books SET stock = stock - {$bookquant} WHERE book_id = {$bookid}";
+        $run5 = mysqli_query($conn, $quer5);
      }
-    $quer3 = "DELETE FROM orders WHERE user_id = {$uid}";
+   $quer3 = "DELETE FROM orders WHERE user_id = {$uid}";
 $run3 = mysqli_query($conn, $quer3);
 unset($_SESSION['add']);
-echo "index.php"; 
+echo "index.php";
 }else{
     echo "PROBELM";
 } 

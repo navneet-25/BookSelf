@@ -52,5 +52,7 @@
         </div>
       </div>
 </footer>
+<script src="JS/jquery.min.js"></script>
+<script src="JS/owl.carousel.min.js"></script>
 </body>
 </html>

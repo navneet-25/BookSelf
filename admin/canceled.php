@@ -95,8 +95,6 @@ $(document).ready(function(){
     $("#change").click(function(){
         let x = $("#mgct").val();
         let y = $("#mgctt").val();
-        alert(x);
-        alert(y);
         $.ajax({
             url : "ajax/cancel-status.php",
             type : "POST",

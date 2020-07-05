@@ -43,8 +43,8 @@ if(isset($_POST['submit'])){
 
                         
                         
-                        $query = "INSERT INTO `books`(`book_name`, `book_price`, `book_discription`, `stock`, `category`, `book_img`, `book_sp`, `book_disc`, `Writer`)
-                                    VALUES ('{$book_name}','{$book_price}', '{$book_discription}', '{$stock}', '{$category}', '{$book_img}','{$sellp}', '{$discount}', '{$writer}');
+                        $query = "INSERT INTO `books`(`book_name`, `book_price`, `book_discription`, `stock`, `total_stock`, `category`, `book_img`, `book_sp`, `book_disc`, `Writer`)
+                                    VALUES ('{$book_name}','{$book_price}', '{$book_discription}', '{$stock}', '{$stock}', '{$category}', '{$book_img}','{$sellp}', '{$discount}', '{$writer}');
                                     UPDATE category SET total_books = total_books + 1 WHERE cat_id = {$category}";
                             if(mysqli_multi_query($conn, $query)){
                                 header("Location: allbooks.php");

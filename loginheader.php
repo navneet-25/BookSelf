@@ -17,6 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/cssfile2.css">
+    <script src="JS/jquery.js"></script>
     <style>
     body{
         font-family: 'Quicksand', sans-serif;
@@ -36,17 +37,14 @@
             background-color: #c67605;
             }
             #lblCartCount {
-                font-size: 14px;
                 background: #ff0000;
                 color: #fff;
                 padding: 0 5px;
                 vertical-align: top;
+                height:17px;
                 margin-left: -10px;
-                height: 17px;
-                font-weight: 600;
                 width: auto;
-                line-height: 15px;
-                font-weight: 500;
+                line-height: 16px;
             }
             #search{
                 border-radius: 20px 0px 0px 20px;
@@ -93,10 +91,10 @@
                     <div class="dropdown col" style="cursor:pointer;margin-top:20px;padding:0;width:45px">
                         <p class="dropbtn" style="font-size: 13px;margin-bottom: 0;font-family: cursive;padding: 0;">Hello,<h6 style="margin-bottom:0"><?php echo explode(" ", $var['user_n'])[0];?> <i class="fa fa-caret-down"  style="font-size:15px;" aria-hidden="true"></i></h6></p>
                             <div class="dropdown-content" style="left:-60%">
-                                        <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Profile</a>
-                                        <a href="#"><i class="fa fa-heart" style="color:#ff4a3d" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Wishlist</a>
-                                        <a href="#"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Notification</a>
-                                        <a href="logout.php"><i class="fa fa-power-off" style="color:red" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+                                        <a href="your-profile.php"><i class="fa fa-user" style="color:blue;" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span style="font-family: Quicksand;">My Profile</span></a>
+                                        <a href="#"><i class="fa fa-heart" style="color:#ff4a3d" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span style="font-family: Quicksand;">Wishlist</span></a>
+                                        <a href="#"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span style="font-family: Quicksand;">Notification</span></a>
+                                        <a href="logout.php"><i class="fa fa-power-off" style="color:red" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span style="font-family: Quicksand;">Logout</span></a>
                             </div>
                     </div>
                     
@@ -107,7 +105,7 @@
                     <div id="navcart" class="col p-0" style="margin-top:26px;width:140px">
                     <a href="user-cart.php" style="font-size:18px;text-decoration:none;color:black">
                     <i id="cartload" class="fa" style="font-size:24px">&#xf07a;</i>
-                    <span class='badge badge-warning' id='lblCartCount'></span>
+                    <span class='badge badge-warning' id='lblCartCount' style="font-size: 14px;font-weight: 700;"></span>
                         <p style="display:inline;font-weight: 600;font-size: 14px;">Cart</p></a>
 
                     </div>

@@ -1,3 +1,4 @@
 <?php
-echo md5("navneet");
+$date = date("F d, Y");
+echo $date;
 ?>

@@ -38,6 +38,7 @@ input[type=number]::-webkit-outer-spin-button {
                                 $Uemail = $_POST['email'];
                                 $name = $_POST['name'];
                                 $gend = $_POST['optradio'];
+                                $date = date("F d, Y");
                                 
                                     $sql = "SELECT user_username FROM users WHERE user_username = '{$Uname}'";
                                     $run = mysqli_query($conn, $sql) or die("Query PRoblem". mysqli_error());
@@ -45,7 +46,7 @@ input[type=number]::-webkit-outer-spin-button {
                                     if(mysqli_num_rows($run) > 0){
                                         $username_error = "Username Alreddy Takken..!!";
                                     }else{
-                                        $sqli = "INSERT INTO users(user_n,user_username,user_email,user_phone,user_password,user_gend) VALUES ('{$name}', '{$Uname}', '{$Uemail}', '{$Umob}', '{$Upass}','{$gend}')";
+                                        $sqli = "INSERT INTO users(user_n,user_username,user_email,user_phone,user_password,user_gend,date) VALUES ('{$name}', '{$Uname}', '{$Uemail}', '{$Umob}', '{$Upass}','{$gend}','{$date}')";
                                         if(mysqli_query($conn, $sqli)){
 
                                             $query = "SELECT * FROM users WHERE user_username = '{$Uname}' AND user_password = '{$Upass}'";

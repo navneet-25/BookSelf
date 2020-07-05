@@ -90,8 +90,14 @@ if(isset($_SESSION['user'])){
                 <img src="img/verif.JPG" id="imgv" alt="">
                 <p class="text-secondary" style="font-size: 12px;">Exclusive Verified Books From team of @BookSelf</p>
                 <hr>
-                <h6 style="color: green;font-weight: 500;text-align: center;">In Stock</h6>
-                <h6 style="color: rgb(128, 0, 0);font-weight: 500;text-align: center;display: none;">Out of Stock</h6>
+                <?php if($result['stock'] > 10){ ?>
+                    <h6 style="color: green;font-weight: 700;text-align: center;">In Stock</h6>
+                <?php }elseif($result['stock'] <= 10 && $result['stock'] >= 1 ){?>
+                    <h6 style="color: rgb(237, 129, 0);font-weight: 700;text-align: center;">Hurry Up,<br> Only <?php echo $result['stock']; ?> unit left</h6>
+                <?php }else{ ?>
+                    <h6 style="color: rgb(226, 7, 7);font-weight: 700;text-align: center;">Out of Stock</h6>
+                <?php } ?>
+                <?php if($result['stock'] > 0){ ?>
                 <hr>
                 <p style="font-size: 16px;display: inline;">Quantity : </p>
                         <select id="quant" style="padding: 4px;border-radius: 4px;outline: none;width: 25%; margin:0 0 0 4px;">
@@ -105,9 +111,10 @@ if(isset($_SESSION['user'])){
                             <input type="hidden" id="bokid" value="<?php echo $result['book_id']; ?>">
                             <input type="hidden" id="bokc" value="<?php echo $result['category']; ?>">
                             <input type="hidden" id="bokp" value="<?php echo $result['book_price']; ?>">
-                            <button id="atc" class="btn w-100 mt-2"><i class="fa fa-cart-plus" aria-hidden="true"></i> ADD TO CART</button>
+                            <button id="atc" class="btn w-100 mt-2"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                <?php }?>
                             <hr>
-                            <button id="wl" class="btn"><i class="fa fa-heart" aria-hidden="true"></i> Add To Wishlist</button>
+                            <button id="wl" class="btn" style="font-weight: 500;"><i class="fa fa-heart" aria-hidden="true"></i> Save At Wishlist</button>
                             <hr>
                             <i class="fa fa-map-marker" aria-hidden="true" class="d-inline"></i><p class="d-inline ml-2" style="color:#0066c0;text-align:right;"> Deliver to Navneet - Gorakhpur 273004</p>
                 
