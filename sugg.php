@@ -5,7 +5,7 @@
 
         $bid = $_POST['book_id'];
 
-        $query1 = "SELECT * FROM books WHERE category = {$catid} AND NOT book_id = {$bid} LIMIT 5";
+        $query1 = "SELECT * FROM books WHERE category = {$catid} AND NOT book_id = {$bid} ORDER BY RAND() LIMIT 5";
 
         $result = mysqli_query($conn, $query1) or die("Query Failed");
 

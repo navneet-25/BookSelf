@@ -4,14 +4,8 @@
        <!--  BEGIN CONTENT AREA  -->
        <div id="content" class="main-content">
             <div class="layout-px-spacing">
-
-                <div class="page-header">
-                    <div class="page-title">
-                        <h3>All Books</h3>
-                    </div>
-                </div>
                 
-                <div class="row" id="cancel-row">
+                <div class="row layout-top-spacing" id="cancel-row">
                     <!-- Modal -->
                 <div class="modal fade" id="deleteConformation" tabindex="-1" role="dialog" aria-labelledby="deleteConformationLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -38,7 +32,15 @@
                 
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
-                            <div class="table-responsive mb-4 mt-4">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4 class="text-center mt-1">All Books <img src="icons/books.png" style="width:auto;height:40px;" alt=""></h4>
+                                        </div>                 
+                                    </div>
+                                </div>
+                                <hr>
+                            <div class="table-responsive mb-4 mt-3">
                                 <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
 
                                     <thead>

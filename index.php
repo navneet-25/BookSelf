@@ -25,75 +25,60 @@ if(isset($_SESSION['user'])){
         <div id="cards" class="row my-2">
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>
-                        <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
-                        <div></div><div></div><div></div>
-                        </div></div>
+                            <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
+                            <div></div><div></div><div></div>
+                            </div></div>
                                 <div class='card-body border-top demo-card'>
-                                    <h6><div class="meter grey">
-                                        <span style="width: 100%"></span>
-                                    </div></h6>
-                                    <div style="margin:20px" class="meter grey">
-                                     <span style="width: 100%"></span>
-                                    </div>
-                                    <button class='btn btn-outline-primary mt-2 d-flex justify-content-center' style='width: 100%;'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:sans-serif;' class='d-inline'>Add to Cart</p></i></button>
+                                <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                                <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                                    <button class='btn mt-2 d-flex justify-content-center' style='width: 100%;border:none;color:white;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                                 </div>
                         </div>
                     </div>
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>
-                        <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
-                        <div></div><div></div><div></div>
-                        </div></div>
+                            <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
+                            <div></div><div></div><div></div>
+                            </div></div>
                                 <div class='card-body border-top demo-card'>
-                                    <h6><div class="meter grey">
-                                        <span style="width: 100%"></span>
-                                    </div></h6>
-                                    <div style="margin:20px" class="meter grey">
-                                     <span style="width: 100%"></span>
-                                    </div>
-                                    <button class='btn btn-outline-primary mt-2 d-flex justify-content-center' style='width: 100%;'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:sans-serif;' class='d-inline'>Add to Cart</p></i></button>
+                                <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                                <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                                    <button class='btn mt-2 d-flex justify-content-center' style='width: 100%;border:none;color:white;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                                 </div>
                         </div>
                     </div>
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>
-                        <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
-                        <div></div><div></div><div></div>
-                        </div></div>
+                            <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
+                            <div></div><div></div><div></div>
+                            </div></div>
                                 <div class='card-body border-top demo-card'>
-                                    <h6><div class="meter grey">
-                                        <span style="width: 100%"></span>
-                                    </div></h6>
-                                    <div style="margin:20px" class="meter grey">
-                                     <span style="width: 100%"></span>
-                                    </div>
-                                    <button class='btn btn-outline-primary mt-2 d-flex justify-content-center' style='width: 100%;'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:sans-serif;' class='d-inline'>Add to Cart</p></i></button>
+                                <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                                <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                                    <button class='btn mt-2 d-flex justify-content-center' style='width: 100%;border:none;color:white;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                                 </div>
                         </div>
                     </div>
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>
-                        <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
-                        <div></div><div></div><div></div>
-                        </div></div>
+                            <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
+                            <div></div><div></div><div></div>
+                            </div></div>
                                 <div class='card-body border-top demo-card'>
-                                    <h6><div class="meter grey">
-                                        <span style="width: 100%"></span>
-                                    </div></h6>
-                                    <div style="margin:20px" class="meter grey">
-                                     <span style="width: 100%"></span>
-                                    </div>
-                                    <button class='btn btn-outline-primary mt-2 d-flex justify-content-center' style='width: 100%;'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:sans-serif;' class='d-inline'>Add to Cart</p></i></button>
+                                <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                                <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                                    <button class='btn mt-2 d-flex justify-content-center' style='width: 100%;border:none;color:white;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                                 </div>
                         </div>
                     </div>
+                    
         </div>
 </div>
-<div class="container">
+<!-- <div class="container">
     <div class="row mt-4">
-        <!-- <div class="col-sm-12 py-1" style="background-size:cover;">
+        <div class="col-sm-12 py-1" style="background-size:cover;">
             <img class="img-fluid" src="img/offers/offer3.jpg" alt="">
-        </div> -->
+        </div>
         <div class="col-4">
             <img src="img/offers/offer2.jpg" class="img-thumbnail d-block mx-auto mt-2" alt="">
         </div>
@@ -104,7 +89,7 @@ if(isset($_SESSION['user'])){
             <img src="img/offers/books.jpg" style="height:170px" class="img-thumbnail d-block mx-auto mt-2" alt="">
         </div>
     </div>
-</div>
+</div> -->
 <script src="JS/jquery.js"></script>
 <script>
         $(document).on("click", ".nav-link", function(){

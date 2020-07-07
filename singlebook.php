@@ -4,22 +4,32 @@ if(isset($_SESSION['user'])){
 }else{
     include "header.php";
 } ?>
+<!-- Google font -->
+<link href="https://fonts.googleapis.com/css?family=Kanit:200" rel="stylesheet">
+
+<!-- Font Awesome Icon -->
+<link type="text/css" rel="stylesheet" href="CSS/font-awesome.min.css" />
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="CSS/style.css" />
+
 <link rel="stylesheet" href="CSS/single.css">
+                    <?php include "include/config.php";
+                        $id = $_GET['bid'];
+                        $query = "SELECT * FROM books WHERE book_id = {$id}";
+                        $run = mysqli_query($conn, $query) or die("OK QUERY DIE");
+                        if(mysqli_num_rows($run) > 0){
+                        $result = mysqli_fetch_assoc($run);
+                        if($result['book_img'] == ""){
+                            $src = "img/noi.png";
+                        }else{
+                            $src = "img/book-image/{$result['book_img']}";
+                        }
+                    ?>
     <div class="container1">
         <div class="row mt-5">
             <div class="col-sm-4">
                 <div id="imgpre">
-                    <?php include "include/config.php";
-                    $id = $_GET['bid'];
-                    $query = "SELECT * FROM books WHERE book_id = {$id}";
-                    $run = mysqli_query($conn, $query) or die("OK QUERY DIE");
-                    $result = mysqli_fetch_assoc($run);
-                    if($result['book_img'] == ""){
-                        $src = "img/noi.png";
-                    }else{
-                        $src = "img/book-image/{$result['book_img']}";
-                    }
-                    ?>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -49,13 +59,13 @@ if(isset($_SESSION['user'])){
             <div class="col-sm-6">
                 <div id="name">
                     <h4><?php echo $result['book_name']; ?></h4>
-                    <p>BY <a href="#">Writer</a></p>
+                    <p>BY <a href="#"><?php echo $result['Writer']?></a></p>
                 </div>
                 <div id="price">
-                    <h6>M.R.P : <span class="" style="text-decoration: line-through;">₹ 150</span></h6>
+                    <h6>M.R.P : <span class="" style="text-decoration: line-through;">₹ <?php echo $result['book_price']; ?></span></h6>
 
-                    <h6 class="d-inline">Price : <h5 class="d-inline">₹ <?php echo $result['book_price']; ?></h5></h6>
-                    <h6>You save : ₹ 50(35%)</h6>
+                    <h6 class="d-inline">Price : <h5 class="d-inline">₹ <?php echo $result['book_sp']; ?></h5></h6>
+                    <h6>You save : ₹ <?php echo $result['book_price'] - $result['book_sp'] ?>.00(<?php echo $result['book_disc']?>%)</h6>
                     <hr>
                         <div class="row info">
                             <div class="col-sm-3">
@@ -83,9 +93,9 @@ if(isset($_SESSION['user'])){
                 </div>
             </div>
             <div class="col-sm-2">
-                <h5 style="color: rgb(180, 0, 0);">₹ <?php echo $result['book_price']; ?></h5>
-                <p>M.R.P :<span class="" style="text-decoration: line-through;">₹ 150</span></p>
-                <p>You Save: ₹ 251.00 (39%)</p>
+                <h5 style="color: rgb(180, 0, 0);">₹ <?php echo $result['book_sp']; ?></h5>
+                <p>M.R.P :<span class="" style="text-decoration: line-through;">₹ <?php echo $result['book_price']; ?></span></p>
+                <p>You Save: ₹ <?php echo $result['book_price'] - $result['book_sp'] ?>.00 (<?php echo $result['book_disc']?>%)</p>
                 <p>Inclusive of all taxes</p>
                 <img src="img/verif.JPG" id="imgv" alt="">
                 <p class="text-secondary" style="font-size: 12px;">Exclusive Verified Books From team of @BookSelf</p>
@@ -132,10 +142,81 @@ if(isset($_SESSION['user'])){
     </div>
         <div class="cont3" style="width:94%;margin:25px auto 0">
             <div id="sugg" class="row" style="width:90%;margin:auto">
-                
-                
+                <div class='col-sm-2 p-0 mx-auto'>
+                    <div class='card'>
+                        <div class='card-img-top demo-img' style="background: #e7e7e7;width: 165px;height: 178px;" ></div>
+                        <div class='card-body border-top demo-card'>
+                            <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                            <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-2 p-0 mx-auto'>
+                    <div class='card'>
+                        <div class='card-img-top demo-img' style="background: #e7e7e7;width: 165px;height: 178px;" ></div>
+                        <div class='card-body border-top demo-card'>
+                            <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                            <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-2 p-0 mx-auto'>
+                    <div class='card'>
+                        <div class='card-img-top demo-img' style="background: #e7e7e7;width: 165px;height: 178px;" ></div>
+                        <div class='card-body border-top demo-card'>
+                            <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                            <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-2 p-0 mx-auto'>
+                    <div class='card'>
+                        <div class='card-img-top demo-img' style="background: #e7e7e7;width: 165px;height: 178px;" ></div>
+                        <div class='card-body border-top demo-card'>
+                            <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                            <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-2 p-0 mx-auto'>
+                    <div class='card'>
+                        <div class='card-img-top demo-img' style="background: #e7e7e7;width: 165px;height: 178px;" ></div>
+                        <div class='card-body border-top demo-card'>
+                            <h6 class='card-title text-center' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></h6>
+                            <p class='card-text' style="width:100%;height:20px;background: #e7e7e7;border-radius:3px;"></p>
+                        </div>
+                    </div>
+                </div>            
             </div>
         </div>
+                <?php }else{ ?>
+                    <script>
+                        var timeleft = 5;
+                            var downloadTimer = setInterval(function(){
+                            if(timeleft <= 0){
+                                clearInterval(downloadTimer);
+                            } else {
+                                document.getElementById("countdown").innerHTML = timeleft;
+                            }
+                            timeleft -= 1;
+                            }, 1000);
+                    </script>
+                    <div id="notfound" style="height:80vh;">
+                        <div class="notfound">
+                            <div class="notfound-404">
+                                <h1>404</h1>
+                            </div>
+                            <h2>Oops! Nothing was found</h2>
+                            <p>The book you are looking for might have been removed had its name changed or is temporarily unavailable. <a href="index.php">Return to homepage</a></p>
+                            <p>You will be redirect to home page in <span id="countdown">5</span> second</p>
+                        </div>
+                    </div>
+                    <script>
+                        setTimeout(function(){
+                            window.location.href = 'index.php';
+                        }, 6000);
+                    </script>
+                <?php } ?>
     <script src="JS/jquery.js"></script>
 <script>
     $("#atc").click(function(){
@@ -175,5 +256,6 @@ if(isset($_SESSION['user'])){
     });
 
 </script>
+    
 
 <?php include "footer.php";?>

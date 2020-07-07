@@ -4,7 +4,7 @@ session_start();
 
 $search_value = $_POST["search"];
 
-$sql = "SELECT * FROM books WHERE book_name LIKE '%{$search_value}%' OR book_name LIKE '{$search_value}%'";
+$sql = "SELECT * FROM books WHERE book_name LIKE '%{$search_value}%' OR book_name LIKE '{$search_value}%' OR Writer LIKE '%{$search_value}%'";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 $output = "";
 if(mysqli_num_rows($result) > 0){
@@ -48,7 +48,7 @@ $output .=       "<img class='card-img-top demo-img' src='{$src}' alt='Card imag
                         <div class='card-body border-top demo-card'>
                             <h6 class='card-title text-center'>{$name}</h6>
                             <b><p class='card-text'>₹. {$rows['book_price']}</p></b>
-                            <button id='atc' class='btn mt-2 d-flex justify-content-center' data-name='{$rows['book_name']}' data-id={$rows['book_id']} style='width: 100%;border:none;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);color:white;'><i class='fa fa-shopping-cart' style='font-size:20px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:sans-serif;' class='d-inline'>Add to Cart</p></i></button>
+                            <button id='atc' class='btn mt-2 d-flex justify-content-center' data-name='{$rows['book_name']}' data-id={$rows['book_id']} style='width: 100%;border:none;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);color:white;'><i class='fa fa-shopping-cart' style='font-size:18px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                         </div>
                 </div>
             </div>";

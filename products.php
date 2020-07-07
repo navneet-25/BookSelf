@@ -51,7 +51,7 @@
                                 <a href='singlebook.php?bid={$rows['book_id']}' target='_blank' style='text-decoration: none;color: black;'><h6 class='card-title text-center'>{$name}</h6></a>
                                     <b><p class='card-text'>₹. {$rows['book_price']}</p></b>
                                     <button id='atc' class='btn mt-2 d-flex justify-content-center' data-name='{$rows['book_name']}' data-id={$rows['book_id']} style='width: 100%;border:none;color:white;background: linear-gradient(180deg, rgba(236,159,0,1) 0%, rgba(166,122,0,1) 100%);'>
-                                    <i class='fa fa-shopping-cart' style='font-size:18px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-weight:400;' class='d-inline'>Add to Cart</p></i></button>
+                                    <i class='fa fa-shopping-cart' style='font-size:18px;' aria-hidden='true'>&nbsp;&nbsp;<p style='font-weight:400;font-family:Quicksand;' class='d-inline'>Add to Cart</p></i></button>
                                 </div>
                         </div>
                     </div>";

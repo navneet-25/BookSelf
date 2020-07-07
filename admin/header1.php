@@ -38,6 +38,7 @@ if(!isset($_SESSION["username"])){
     <link href="plugins/notification/snackbar/snackbar.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/components/tabs-accordian/custom-tabs.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="plugins/loaders/custom-loader.css" rel="stylesheet" type="text/css" /> -->
     <style>
     input[type=number]::-webkit-inner-spin-button, 
     input[type=number]::-webkit-outer-spin-button { 

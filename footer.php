@@ -3,31 +3,29 @@
   <footer class="site-footer mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6 style="font-size:14px">About</h6>
+          <div class="col-sm-12 col-md-5">
+            <h6 style="font-size:14px">About Us</h6>
             <p class="text-justify small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non quas consequuntur similique excepturi porro natus recusandae ab commodi amet assumenda iusto optio quod adipisci delectus perferendis at, eos quidem, corporis cum maiores placeat! Et at debitis in quaerat officia, necessitatibus illo. Hic omnis itaque veritatis? Totam odio sit omnis laboriosam!</p>
           </div>
 
-          <div class="col-xs-6 col-md-3">
-            <h6 style="font-size:14px">Categories</h6>
+          <div class="col-xs-6 col-md-4">
+            <h6 style="font-size:14px">Contact</h6>
+            <hr>
             <ul class="footer-links">
-              <li style="font-size:12px"><a href="">C</a></li>
-              <li style="font-size:12px"><a href="">UI Design</a></li>
-              <li style="font-size:12px"><a href="">PHP</a></li>
-              <li style="font-size:12px"><a href="">Java</a></li>
-              <li style="font-size:12px"><a href="">Android</a></li>
-              <li style="font-size:12px"><a href="">Templates</a></li>
+              <li style="font-size:18px">(+91) <a href="#">8318770766</a> (Customer Care)</li>
+              <li style="font-size:14px">Email: <a href="#">coustomerservice@bookself.com</a></li>
+              
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
-            <h6 style="font-size:14px">Quick Links</h6>
+            <h6 style="font-size:14px">Company</h6>
+            <hr>
             <ul class="footer-links">
-              <li style="font-size:12px"><a href="">About Us</a></li>
+              <li style="font-size:12px"><a href="aboutus.php">About Us</a></li>
               <li style="font-size:12px"><a href="">Contact Us</a></li>
-              <li style="font-size:12px"><a href="">Contribute</a></li>
               <li style="font-size:12px"><a href="">Privacy Policy</a></li>
-              <li style="font-size:12px"><a href="">Sitemap</a></li>
+              <li style="font-size:12px"><a href="terms&condition.php">Terms and Condition</a></li>
             </ul>
           </div>
         </div>

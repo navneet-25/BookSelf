@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<h5>Terms and Conditions for Company Name</h5>
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+    include "loginheader.php"; 
+}else{
+    include "header.php"; 
+} 
+?>
+<div class="container my-5">
+<h3 class="text-center">Terms and Conditions for BookSelf</h3>
+<hr>
+<p class="px-4">
 Introduction
 These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Webiste Name accessible at Website.com.
 
@@ -60,5 +63,6 @@ These Terms constitute the entire agreement between Company Name and you in rela
 
 Governing Law & Jurisdiction
 These Terms will be governed by and interpreted in accordance with the laws of the State of Country, and you submit to the non-exclusive jurisdiction of the state and federal courts located in Country for the resolution of any disputes.
-</body>
-</html>
+</p>
+</div>
+<?php include "footer.php"; ?>
