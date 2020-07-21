@@ -4,14 +4,6 @@ if(isset($_SESSION['user'])){
 }else{
     include "header.php";
 } ?>
-<!-- Google font -->
-<link href="https://fonts.googleapis.com/css?family=Kanit:200" rel="stylesheet">
-
-<!-- Font Awesome Icon -->
-<link type="text/css" rel="stylesheet" href="CSS/font-awesome.min.css" />
-
-<!-- Custom stlylesheet -->
-<link type="text/css" rel="stylesheet" href="CSS/style.css" />
 
 <link rel="stylesheet" href="CSS/single.css">
                     <?php include "include/config.php";
@@ -110,18 +102,18 @@ if(isset($_SESSION['user'])){
                 <?php if($result['stock'] > 0){ ?>
                 <hr>
                 <p style="font-size: 16px;display: inline;">Quantity : </p>
-                        <select id="quant" style="padding: 4px;border-radius: 4px;outline: none;width: 25%; margin:0 0 0 4px;">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                        <select id="quant" style="padding: 4px;border-radius: 4px;outline: none;width: auto; margin:0 0 0 4px;background: rgb(172,172,172);background: linear-gradient(180deg, rgba(172,172,172,0) 0%, rgba(222,222,222,1) 0%, rgba(190,190,190,1) 100%); border: 1px solid #e2e2e2;">
+                                <option value="1">1 Unit</option>
+                                <option value="2">2 Unit</option>
+                                <option value="3">3 Unit</option>
+                                <option value="4">4 Unit</option>
+                                <option value="5">5 Unit</option>
                         </select><br>
                             <input type="hidden" id="bookn" value="<?php echo $result['book_name']; ?>">
                             <input type="hidden" id="bokid" value="<?php echo $result['book_id']; ?>">
                             <input type="hidden" id="bokc" value="<?php echo $result['category']; ?>">
                             <input type="hidden" id="bokp" value="<?php echo $result['book_price']; ?>">
-                            <button id="atc" class="btn w-100 mt-2"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
+                            <button id="atc" class="btn w-100 mt-3"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
                 <?php }?>
                             <hr>
                             <button id="wl" class="btn" style="font-weight: 500;"><i class="fa fa-heart" aria-hidden="true"></i> Save At Wishlist</button>
