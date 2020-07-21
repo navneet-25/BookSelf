@@ -83,6 +83,7 @@ $(document).ready(function(){
     });  */
 
     $(document).on("change", "#quant", function(){
+        $(this).parents('tr').css({'pointer-events': 'none','opacity': '0.4'})/* .append("<div style='border: 5px solid grey;border-radius: 50%;border-top: 5px solid black;width: 30px;height: 30px;-webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite;position: absolute; right:47%; top: 22%;'></div>") */;
         var bookid2 = $(this).data("uid");
         var bookid1 = $(this).val();
         $.ajax({

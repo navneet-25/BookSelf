@@ -56,7 +56,8 @@
                 box-shadow: none !important;
             }
     </style>
-    <title>Book Self</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/cute-clipart/50/000000/book.png">
+    <title>BookSelf</title>
 </head>
 <body>
     <div class="container-fluid">

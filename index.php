@@ -117,12 +117,13 @@ $(document).ready(function(){
     loadTable();
     
     function loadproduct(cat){
+        $("#cards").html("<div class='loader' style='margin:146px auto;'></div>")
         $.ajax({
             url : "product-nav.php",
             type : "POST",
             data : {catnm : cat},
             success : function(data){
-            $("#cards").html(data);
+                $("#cards").html(data);
             }
         });
     }
