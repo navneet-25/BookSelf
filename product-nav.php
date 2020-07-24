@@ -18,7 +18,7 @@
 
                 } 
         }
-
+        
         $catid = $_POST['catnm'];
 
         $query = "SELECT * FROM books WHERE category = {$catid}";
@@ -28,6 +28,7 @@
         $output = "";
         
         if(mysqli_num_rows($result) > 0){
+            $output .= "<div class='row my-2'>";
             while($rows = mysqli_fetch_assoc($result)){
                 $name = $rows['book_name'];
                 if(strlen($name) > 25){

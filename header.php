@@ -30,6 +30,29 @@
         -webkit-appearance:none;
         box-shadow: none !important;
     }
+    #cityList{
+        width: 100%;
+        position: absolute;
+        margin: 4px 0 0;
+        border-radius: 5px;
+        display: none;
+        box-shadow: 0px 0px 4px 0px grey;
+        }
+        #cityList ul{
+        list-style: none;
+        background: #f6f6f6;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+
+        }
+        #cityList ul li{
+        padding: 10px 10px;
+        cursor: pointer;
+        }
+        #cityList ul li:hover{
+        background: #d0e4f4;
+        }
     </style>
     <link rel="icon" type="image/x-icon" href="https://img.icons8.com/cute-clipart/50/000000/book.png">
     <title>BookSelf</title>
@@ -51,6 +74,7 @@
                             <i class="fa fa-search" style="color:#ff4a3d" aria-hidden="true"></i>
                         </button>
                     </div>
+                    <div id="cityList"></div>
                   </form> 
             </div>
             <!-- <div class="col-md-3 mt-2">

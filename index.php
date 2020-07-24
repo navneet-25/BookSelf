@@ -22,7 +22,8 @@ if(isset($_SESSION['user'])){
         <div class="row" id="faltoff">
             
         </div>
-        <div id="cards" class="row my-2">
+        <div id="cards">
+            <div class="row my-2 showcase">
                     <div class='col-md-3 my-1'>
                         <div class='card shadow'>
                             <div class="loadingio-spinner-pulse-t1ilttbaskf mx-auto"><div class="ldio-2wmew4yihf">
@@ -71,7 +72,7 @@ if(isset($_SESSION['user'])){
                                 </div>
                         </div>
                     </div>
-                    
+            </div>
         </div>
 </div>
 <!-- <div class="container">
@@ -96,28 +97,34 @@ if(isset($_SESSION['user'])){
         $("#book-list li p").removeClass('selecteda');
         $(this).addClass('selecteda');
     });
-    /* $('#all').on('click', function(){
-        $(this).addClass('selecteda');
-    }); */
 
 $(document).ready(function(){
+
     function flat(){
         $("#faltoff").html("<div class='col'> <img src='img/offers/offer7.jpeg' class='img-fluid d-block mx-auto img-thumbnail' alt=''> </div>");
     }
     // Load Table Records
-    function loadTable(){
+    function loadTable(page){
       $.ajax({
         url : "products.php",
         type : "POST",
+        data : {page_no : page},
         success : function(data){
-          $("#cards").html(data);
+            if(data){
+                $(".showcase").remove();
+                $("#show_more").remove();
+                $("#cards").append(data);
+            }else{
+                $("#show_more").html("No Books More");
+                $("#show_more").prop("disabled", true);
+            }
         }
       });
     }
     loadTable();
     
     function loadproduct(cat){
-        $("#cards").html("<div class='loader' style='margin:146px auto;'></div>")
+        $("#cards").html("<div class='loader' style='margin:146px auto;'></div>");
         $.ajax({
             url : "product-nav.php",
             type : "POST",
@@ -168,8 +175,10 @@ $(document).ready(function(){
         });
     });
     $('#all').on('click', function(){
-        flat();
-        loadTable();
+        /* flat(); */
+        $("#cards").html("<div class='loader' style='margin:146px auto;'></div>");
+        $("#cards").children().remove();
+        loadTable(0);
     });
     $(document).on("click", "#nav-link", function(){
         var x = $(this).data("nid");
@@ -186,6 +195,11 @@ $(document).ready(function(){
             }
         });
     });
+    $(document).on("click", "#show_more", function(){
+        $("#show_more").html("<div class='loader mx-4' style='border: 2px solid #f3f3f3; border-top: 2px solid #3498db;height: 25px;width:25px;'></div>")
+        var pid = $(this).data("sm");
+        loadTable(pid);
+    })
 });
 </script>
 <?php include "footer.php"; ?>

@@ -5,6 +5,15 @@ if(isset($_SESSION['user'])){
     include "header.php";
 } ?>
 
+                    <!-- Google font -->
+                    <link href="https://fonts.googleapis.com/css?family=Kanit:200" rel="stylesheet">
+
+                    <!-- Font Awesome Icon -->
+                    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+
+                    <!-- Custom stlylesheet -->
+                    <link rel="stylesheet" href="css/ucons.css">
+
 <link rel="stylesheet" href="CSS/single.css">
                     <?php include "include/config.php";
                         $id = $_GET['bid'];

@@ -8,6 +8,7 @@ $sql = "SELECT * FROM books WHERE book_name LIKE '%{$search_value}%' OR book_nam
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 $output = "";
 if(mysqli_num_rows($result) > 0){
+    $output .= "<div class='row my-2'>";
     while($rows = mysqli_fetch_assoc($result)){
         $name = $rows['book_name'];
         if(strlen($name) > 25){

@@ -18,14 +18,28 @@
 
                 } 
         }
+        $limit = 8;
+            if(isset($_POST['page_no'])){
+                $page = $_POST['page_no'];
+            }else{
+                $page = 0;
+            }
 
-        $query = "SELECT * FROM books";
+        $query = "SELECT * FROM books LIMIT {$page}, $limit";
 
         $result = mysqli_query($conn, $query) or die("Query Failed");
 
         $output = "";
+
+        
+        if(isset($_POST['page_no'])){
+            $last_id = $_POST['page_no'];
+        }else{
+            $last_id = 0;
+        }
         
         if(mysqli_num_rows($result) > 0){
+            $output .= "<div class='row my-2'>";
             while($rows = mysqli_fetch_assoc($result)){
                 $name = $rows['book_name'];
                 if(strlen($name) > 25){
@@ -55,13 +69,13 @@
                                 </div>
                         </div>
                     </div>";
-            }
+            $last_id++;}
+
+            $output .= "</div><div class='row justify-content-center'>
+            <button id='show_more' class='btn mt-5' data-sm='{$last_id}'>Show More <i class='fa fa-angle-down' aria-hidden='true'></i></button>
+            </div>";
 
         echo $output;
 
-        }else{
-            echo "<img src='img/nobook.jpg' style='width:70%;margin:auto'>";
         }
-        
-        
 ?>

@@ -3,12 +3,16 @@ include "loginheader.php"; ?>
 <link rel="stylesheet" href="CSS/orders.css">
     <div class="wrapper">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h3 class="heading">Your Orders</h3>
+                    <ol id="breadcrumb1" class="breadcrumb1 mb-0">
+                        <li class="breadcrumb1-item d-inline"><a href="your-profile.php">Your Account</a> /</li>
+                        <li class="breadcrumb1-item d-inline active" aria-current="page">Orders</li>
+                    </ol>
             </div>
-            <div class="col-sm-4 offset-sm-5">
+            <div class="col-sm-4 offset-sm-4">
                 <div id="searchorder">
-                    <i class="fa fa-search" style="width: 13px;height: 13px;opacity: .55;position: absolute;top: 25%;
+                    <i class="fa fa-search" style="width: 13px;height: 13px;opacity: .55;position: absolute;top: 17%;
                     margin-left: 11px;" aria-hidden="true"></i>
                     <input type="text" style="padding:2px 25px;border-radius:5px;border:1px solid grey;outline:none;margin:4px;width:100%" placeholder="Search Your Order" name="" id="">
                 </div>

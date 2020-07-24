@@ -1,3 +1,32 @@
+<script src="JS/jquery.js"></script>
+<script>
+$(document).ready(function(){
+    // Autocomplete Textbox
+    $("#search").keyup(function(){
+      var search = $(this).val();
+
+      if(search != ''){
+         $.ajax({
+            url: "recomed.php",
+            method: "POST",
+            data: { search: search},
+            success: function(data){
+              $("#cityList").fadeIn("fast").css({"z-index":"1"}).html(data);
+            }
+         }); 
+      }else{
+        $("#cityList").fadeOut();
+      }
+    });
+
+    // Autocomplete List Click Code
+    $(document).on('click','#cityList li',function(){
+      $('#search').val($(this).text());
+      $("#cityList").fadeOut();
+    });
+});
+</script>
+
   <!-- Site footer -->
   <link rel="stylesheet" href="CSS/footer.css">
   <footer class="site-footer mt-5">
