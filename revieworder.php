@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['user'])){
     header("location: user-login.php");
 }elseif(!isset($_SESSION['add'])){
-    header("location: user-login.php");
+    header("location: user-cart.php");
 } ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +30,25 @@ if(!isset($_SESSION['user'])){
         body{
             font-family: 'Muli', sans-serif;
         }
+        .loader {
+        border: 5px solid grey;
+        border-radius: 50%;
+        border-top: 5px solid black;
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        }
+
         /* Safari */
         @-webkit-keyframes spin {
         0% { -webkit-transform: rotate(0deg); }
         100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
         }
         .sya1{
                 font-size: 12px;
@@ -45,11 +60,6 @@ if(!isset($_SESSION['user'])){
             #clickme:hover{
                 color: rgb(255, 95, 95);
             }
-
-        @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-        }
         .ryo{
             font-size: 23px;
             line-height: 1.3;
@@ -110,24 +120,17 @@ if(!isset($_SESSION['user'])){
                     <p style="color: black; margin: 0;">Disscount things</p>
                 </div>
                 <div class="row" style="padding: 1rem;border: 1px solid rgb(221, 221, 221);border-radius: 5px;margin:10px 0;">
-                    <div class="col-sm-4">
-                        <div id="shiping"><h6 class="d-inline">Shipping Address</h6><p class="d-inline" style="cursor: pointer;color: rgb(38, 38, 255);margin-left: 7px;font-size: 12px;">Change</p></div>
-                            <div class="card-body" style="padding: 5px 0;">
-                            <?php 
-                            $addid = $_SESSION['add'];
-                            $query = "SELECT * FROM addresses WHERE add_id = {$addid}";
-                            $run = mysqli_query($conn, $query) or die("QUERY FT GYI");
-                            $result = mysqli_fetch_assoc($run);
-                            ?>
-                            <input id="addid" type="hidden" value="<?php echo $result['add_id'] ?>">
-                              <h5 class="card-title"><?php echo $result['user_name']; ?></h5>
-                              <h6 class="card-subtitle mb-2 text-muted small">Phone: <?php echo $result['user_phone']; ?></h6>
-                              <p class="card-text"><?php echo $result['address_name']; ?>  <?php echo $result['zip']; ?></p>
-                              <p class="card-text" style="font-size:15px">City: <?php echo $result['city']; ?></p>
-                            </div>    
+                    <div class="col-sm-4" id="address">
+                        <div id='shiping'><h6 class='d-inline'>Shipping Address</h6><p class='d-inline' data-toggle='modal' data-target='#exampleModalCenter' style='cursor: pointer;color: rgb(38, 38, 255);margin-left: 7px;font-size: 12px;'>Change</p></div>
+                            <div class='card-body mb-2' id="triel" style='padding: 5px 0;'>
+                            <h5 class='card-title w-75 rounded' style="padding:10px; background:#c7c7c7;"></h5>
+                            <h6 class='card-subtitle mb-2 w-50 rounded' style="padding:10px; background:#c7c7c7;"></h6>
+                            <p class='card-text w-100 rounded mb-2' style="padding:10px; background:#c7c7c7;"></p>
+                            <p class='card-text w-75 rounded' style="padding:10px; background:#c7c7c7;"></p>
+                        </div>
                     </div>
                     <div class="col-sm-4">
-                        <div id="pay-meth"><h6 class="d-inline">Payment Method</h6><p class="d-inline" style="cursor: pointer;color: rgb(38, 38, 255);margin-left: 7px;font-size: 12px;">Change</p></div>
+                        <div id="pay-meth"><h6 class="d-inline">Payment Method</h6><a href="payment.php" class="d-inline" style="cursor: pointer;color: rgb(38, 38, 255);margin-left: 7px;font-size: 12px;">Change</a></div>
                             <div id="meth">
                                 <img src="img/cod.png" style="width: auto;height: 23px;" class="d-inline" alt="">
                                 <p class="d-inline">Cash on delivery</p>
@@ -135,7 +138,7 @@ if(!isset($_SESSION['user'])){
                     </div>
                     <div class="col-sm-4">
                         <div id="coppon"><h6 class="d-inline">Promotional codes</h6></div>
-                        <input type="text" name="" id="" class="float-left" style="border-radius: 5px;border: 1px solid rgb(211, 211, 211);margin: 1rem 0 0;width: 150px;padding: 4px 10px;" placeholder="Code Here">
+                        <input type="text" name="" id="" class="float-left" style="border-radius: 5px;border: 1px solid rgb(211, 211, 211);margin: 1rem 0 0;width: 148px;padding: 4px 10px;" placeholder="Code Here">
                         <button class="apply d-inline">Apply</button>
                     </div>
                 </div>
@@ -189,9 +192,36 @@ if(!isset($_SESSION['user'])){
         <!-- Copyright -->
       
       </footer>
+      <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 65%;">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalLongTitle" style="margin: 0 0 0 333px;">Change Address</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="adderssshow"></div>
+                </div>
+                </div>
+            </div>
+        </div>
     <script src="JS/jquery.js"></script>
     <script>
-        $(document).ready(function(){
+$(document).ready(function(){
+    // Load Address for model box
+    function loadAdd(){
+      $.ajax({
+        url : "ajax/deliver2.php",
+        type : "POST",
+        success : function(data){
+          $("#adderssshow").html(data);
+        }
+      });
+    }
+    loadAdd();
     // Load Table Records
     function loadTable(){
       $.ajax({
@@ -225,7 +255,29 @@ if(!isset($_SESSION['user'])){
             }
         })
     });
-    
+    // For Address
+    function address(){
+        $.ajax({
+            url : "ajax/r-add.php",
+            type : "POST",
+            success : function(data){
+                $("#address").html(data);
+            }
+        })
+    }
+    address();
+    $(document).on("click", "#submit", function(){
+        $("#triel").html("<div class='loader'></div>").css("margin","25px 57px");
+        var x = $(this).data("aid");
+        $.ajax({
+            url : "ajax/addsess.php",
+            type : "POST",
+            data : {addid : x},
+            success : function(data){
+            }
+        })
+        address();
+    })
 });
         
     </script>

@@ -18,14 +18,14 @@
 
                 } 
         }
-        $limit = 8;
+        /* $limit = 8;
             if(isset($_POST['page_no'])){
                 $page = $_POST['page_no'];
             }else{
                 $page = 0;
-            }
+            } */
 
-        $query = "SELECT * FROM books LIMIT {$page}, $limit";
+        $query = "SELECT * FROM books";
 
         $result = mysqli_query($conn, $query) or die("Query Failed");
 
@@ -71,9 +71,9 @@
                     </div>";
             $last_id++;}
 
-            $output .= "</div><div class='row justify-content-center'>
+            /* $output .= "</div><div class='row justify-content-center'>
             <button id='show_more' class='btn mt-5' data-sm='{$last_id}'>Show More <i class='fa fa-angle-down' aria-hidden='true'></i></button>
-            </div>";
+            </div>"; */
 
         echo $output;
 

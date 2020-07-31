@@ -104,7 +104,7 @@ $(document).ready(function(){
         $("#faltoff").html("<div class='col'> <img src='img/offers/offer7.jpeg' class='img-fluid d-block mx-auto img-thumbnail' alt=''> </div>");
     }
     // Load Table Records
-    function loadTable(page){
+    /* function loadTable(page){
       $.ajax({
         url : "products.php",
         type : "POST",
@@ -118,6 +118,16 @@ $(document).ready(function(){
                 $("#show_more").html("No Books More");
                 $("#show_more").prop("disabled", true);
             }
+        }
+      });
+    }
+    loadTable(); */
+    function loadTable(){
+      $.ajax({
+        url : "products.php",
+        type : "POST",
+        success : function(data){
+            $("#cards").html(data);
         }
       });
     }
@@ -155,7 +165,7 @@ $(document).ready(function(){
     }
 
     $(document).on("click", "#atc", function(){
-        $(this).text("Adding...");
+        $(this).text("Adding...").css("padding","3px");
         var book_id = $(this).data("id");
         var book_name = $(this).data("name");
         $.ajax({
@@ -178,22 +188,25 @@ $(document).ready(function(){
         /* flat(); */
         $("#cards").html("<div class='loader' style='margin:146px auto;'></div>");
         $("#cards").children().remove();
-        loadTable(0);
+        loadTable();
     });
     $(document).on("click", "#nav-link", function(){
         var x = $(this).data("nid");
         loadproduct(x);
     });
-    $("#search").on("keyup",function(){
-    let search_term = $(this).val();
+    function searchon(x){
         $.ajax({
             url: "search-products.php",
             type: "POST",
-            data : {search:search_term },
+            data : {search:x },
             success: function(data) {
             $("#cards").html(data);
             }
         });
+    }
+    $("#search").on("keyup blur click",function(){
+    let search_term = $(this).val();
+        searchon(search_term);
     });
     $(document).on("click", "#show_more", function(){
         $("#show_more").html("<div class='loader mx-4' style='border: 2px solid #f3f3f3; border-top: 2px solid #3498db;height: 25px;width:25px;'></div>")

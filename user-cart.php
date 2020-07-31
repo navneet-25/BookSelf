@@ -11,7 +11,7 @@ if(!isset($_SESSION['user'])){
 
 
 <!-- <div class="container"> -->
-<br>  <p class="text-center h3">Your Cart [2]</p>
+<br>  <p class="text-center h3">Your Cart <span id="count">[]</span></p>
 <hr>
 
                         <div class="card" style="min-height:400px;">
@@ -46,6 +46,7 @@ if(!isset($_SESSION['user'])){
 $(document).ready(function(){
     // Load Table Records
     function loadTable(){
+        $("#tbody").html("<div class='loader' style='position: absolute;right: 31rem;top: 10rem;border: 5px solid #cccccc;border-top: 5px solid;width: 90px;height: 90px;'></div>");
       $.ajax({
         url : "product-to-cart.php",
         type : "POST",
@@ -71,11 +72,12 @@ $(document).ready(function(){
             url : "cartload.php",
             type : "POST",
             success : function(data){
+            $("#count").html("[" + data + "]");
             $(".badge").html(data);
             }
         });
     }
-
+    loadcart();
     
        
     /* $("#close-btn").on("click",function(){
@@ -84,6 +86,7 @@ $(document).ready(function(){
 
     $(document).on("change", "#quant", function(){
         $(this).parents('tr').css({'pointer-events': 'none','opacity': '0.4'})/* .append("<div style='border: 5px solid grey;border-radius: 50%;border-top: 5px solid black;width: 30px;height: 30px;-webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite;position: absolute; right:47%; top: 22%;'></div>") */;
+        $("#cheak").css({'pointer-events': 'none','opacity': '0.4'});
         var bookid2 = $(this).data("uid");
         var bookid1 = $(this).val();
         $.ajax({

@@ -14,7 +14,7 @@
             }else{
                 $output .= "<div class='card-footer' style='height:84px;'>
                                 <div class='pull-right' style='margin: 10px 18px;'>
-                                    <a href='checkout.php' class='btn btn-success pull-right'>Checkout</a>
+                                    <a href='checkout.php' id='cheak' class='btn btn-success pull-right'>Checkout</a>
                                     <div class='pull-right' style='margin: 8px 15px 0px 15px'>
                                         <h6>Total Ruppe: <b>₹. {$row['sum(total)']}</b></h6>
                                     </div>

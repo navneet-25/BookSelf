@@ -125,7 +125,7 @@
     // Load Table Records
     function loadAdd(){
       $.ajax({
-        url : "deliver.php",
+        url : "ajax/deliver.php",
         type : "POST",
         success : function(data){
           $("#address").html(data);
@@ -136,7 +136,7 @@
     $(document).on("click", "#submit", function(){
         let x = $(this).data("aid");
         $.ajax({
-            url : "addsess.php",
+            url : "ajax/addsess.php",
             type : "POST",
             data : {addid : x},
             success : function(data){
